@@ -293,8 +293,8 @@
         <nav>
             <a href="#">Inicio</a>
             <a href="#">Acerca de</a>
-            <a href="#">Servicios</a>
-            <a href="#">Contacto</a>
+            <a href="sucursales.html">Servicios</a>
+                        <a href="#">Contacto</a>
         </nav>
         <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
     </header>
@@ -305,44 +305,42 @@
             <p>Explora nuestro delicioso menú de comidas</p>
         </section>
         <!-- Insertar aquí el carrusel -->
-    <div class="carousel-container" id="localCarousel">
-        <!-- Las diapositivas se generarán dinámicamente con JavaScript -->
-    </div>
-    
-    <!-- IMPORTANTE: Primero incluir el archivo JavaScript que define la función -->
-    <script src="carousel.js"></script>
-    
-    <!-- Luego usar la función -->
-    <script>
-        // Definir los elementos del carrusel
+        <!-- Contenedor del carrusel -->
+        <div class="carousel-container" id="localCarousel"></div>
+
+        <!-- Incluir el archivo compilado de JavaScript -->
+        <script src="/Configuraciones/carousel.js"></script>
+
+        <!-- Código para usar el carrusel -->
+        <script>
         const misImagenes = [
             {
-                image: "./lugar/Local1.jpg",
-                title: "Nuestro local principal",
-                description: "Disfruta de un ambiente acogedor en nuestra sucursal principal"
+            image: "/Lugar/Local1.jpg",
+            title: "Nuestro local principal",
+            description: "Disfruta de un ambiente acogedor en nuestra sucursal principal"
             },
             {
-                image: "./lugar/cocina1.jpg",
-                title: "Cocina profesional",
-                description: "Contamos con equipamiento de última generación para brindarte la mejor calidad"
+            image: "/Lugar/cocina1.jpg",
+            title: "Cocina profesional",
+            description: "Contamos con equipamiento de última generación para brindarte la mejor calidad"
             },
             {
-                image: "./lugar/Comedor1.jpg",
-                title: "Área de comedor",
-                description: "Espacio confortable para disfrutar tus comidas favoritas"
+            image: "/Lugar/comedor1.jpg",
+            title: "Área de comedor",
+            description: "Espacio confortable para disfrutar tus comidas favoritas"
             },
             {
-                image: "./lugar/bar1.jpg",
-                title: "Bar de bebidas",
-                description: "Gran variedad de bebidas para acompañar tus platillos"
+            image: "/Lugar/bar1.jpg",
+            title: "Bar de bebidas",
+            description: "Gran variedad de bebidas para acompañar tus platillos"
             }
         ];
-        
-        // Inicializar el carrusel cuando el DOM esté listo
-        document.addEventListener('DOMContentLoaded', function() {
+
+        document.addEventListener('DOMContentLoaded', function () {
             createCarousel('localCarousel', misImagenes);
         });
-    </script>
+        </script>
+
 
         <section class="cards" id="menuCards">
             <!-- Las tarjetas se llenarán dinámicamente con TypeScript -->

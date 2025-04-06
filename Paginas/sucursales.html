@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegación Rodrix</title>
+    <style>
+        footer {
+            background-color: var(--header-bg);
+            padding: 1rem 0;
+            text-align: center;
+            margin-top: 2rem;
+            width: 100%;
+            box-shadow: 0 -2px 5px var(--shadow-color);
+            transition: var(--transition);
+        }
+
+        /* If you want the footer to always stick to the bottom even when content is short */
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+        /* Mantener tus variables de tema */
+        :root {
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --header-bg: #f0f0f0;
+            --card-bg: #f9f9f9;
+            --border-color: #dddddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --header-bg: #1e1e1e;
+            --card-bg: #2d2d2d;
+            --border-color: #444444;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px var(--shadow-color);
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Estilo para la barra de navegación */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo de la lista de navegación */
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 1rem;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        /* Estilo de los enlaces de navegación */
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Estilo para el enlace activo */
+        nav a.active {
+            background-color: var(--border-color);
+            font-weight: bold;
+        }
+
+        /* Estilo para el botón de tema */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            transition: var(--transition);
+            margin-left: 1rem;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Estilo para menú desplegable (opcional) */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--background-color);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px var(--shadow-color);
+            z-index: 1;
+            border-radius: 4px;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            padding: 0.75rem 1rem;
+            display: block;
+        }
+                /* Estilos específicos para la página de sucursales */
+                .sucursales-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sucursal-card {
+            width: calc(50% - 20px);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .sucursal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sucursal-imagen {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .sucursal-info {
+            padding: 15px;
+        }
+
+        .sucursal-nombre {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .sucursal-direccion {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .sucursal-estado {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .abierto {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+
+        .cerrado {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+
+        .servicios-adicionales {
+            margin-top: 15px;
+        }
+
+        .servicio {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+            color: #555;
+        }
+
+        .servicio svg {
+            margin-right: 5px;
+        }
+
+        .horarios {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .horarios-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        .horarios-tabla td {
+            padding: 3px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .horarios-tabla td:last-child {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .sucursal-card {
+                width: 100%;
+            }
+        }
+
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .logo-container {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            
+            nav {
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            nav a {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">Rodrix</div>
+            <button id="themeToggle" class="theme-toggle">☀️</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="pagina.html">Inicio</a></li>
+                <li><a href="acerca.html">Acerca de</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li class="dropdown">
+                    <a href="sucursales.html">Sucursales</a>
+                    <div class="dropdown-content">
+                        <a href="sucursal-principal.html">Sucursal Principal</a>
+                        <a href="sucursal-centro.html">Sucursal Centro</a>
+                        <a href="sucursal-norte.html">Sucursal Norte</a>
+                    </div>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>Nuestras Sucursales</h1>
+            <p>Conoce todas nuestras ubicaciones y los servicios que ofrecemos</p>
+        </section>
+
+        <section class="sucursales-container">
+            <!-- Sucursal 1 -->
+            <div class="sucursal-card">
+                <img src="./lugar/Local1.jpg" alt="Sucursal Principal" class="sucursal-imagen">
+                <div class="sucursal-info">
+                    <h2 class="sucursal-nombre">Sucursal Principal</h2>
+                    <p class="sucursal-direccion">Av. Corrientes 1234, CABA</p>
+                    
+                    <div>
+                        <span class="sucursal-estado abierto">ABIERTO AHORA</span>
+                        <span>Cierra a las 23:00</span>
+                    </div>
+                    
+                    <div class="servicios-adicionales">
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </svg>
+                            Reservaciones
+                        </div>
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                            </svg>
+                            Envío a domicilio
+                        </div>
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
+                            </svg>
+                            Eventos
+                        </div>
+                    </div>
+                    
+                    <div class="horarios">
+                        <p><strong>Horarios:</strong></p>
+                        <table class="horarios-tabla">
+                            <tr>
+                                <td>Lunes a Jueves</td>
+                                <td>11:00 - 23:00</td>
+                            </tr>
+                            <tr>
+                                <td>Viernes y Sábados</td>
+                                <td>11:00 - 01:00</td>
+                            </tr>
+                            <tr>
+                                <td>Domingos</td>
+                                <td>12:00 - 22:00</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sucursal 2 -->
+            <div class="sucursal-card">
+                <img src="./lugar/cocina1.jpg" alt="Sucursal Centro" class="sucursal-imagen">
+                <div class="sucursal-info">
+                    <h2 class="sucursal-nombre">Sucursal Centro</h2>
+                    <p class="sucursal-direccion">Calle Florida 567, Centro</p>
+                    
+                    <div>
+                        <span class="sucursal-estado cerrado">CERRADO</span>
+                        <span>Abre mañana a las 11:00</span>
+                    </div>
+                    
+                    <div class="servicios-adicionales">
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </svg>
+                            Reservaciones
+                        </div>
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                            </svg>
+                            Terraza
+                        </div>
+                    </div>
+                    
+                    <div class="horarios">
+                        <p><strong>Horarios:</strong></p>
+                        <table class="horarios-tabla">
+                            <tr>
+                                <td>Lunes a Viernes</td>
+                                <td>11:00 - 22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Sábados</td>
+                                <td>12:00 - 00:00</td>
+                            </tr>
+                            <tr>
+                                <td>Domingos</td>
+                                <td>Cerrado</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sucursal 3 -->
+            <div class="sucursal-card">
+                <img src="./lugar/Comedor1.jpg" alt="Sucursal Norte" class="sucursal-imagen">
+                <div class="sucursal-info">
+                    <h2 class="sucursal-nombre">Sucursal Norte</h2>
+                    <p class="sucursal-direccion">Av. Libertador 8950, Zona Norte</p>
+                    
+                    <div>
+                        <span class="sucursal-estado abierto">ABIERTO AHORA</span>
+                        <span>Cierra a las 22:00</span>
+                    </div>
+                    
+                    <div class="servicios-adicionales">
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                            </svg>
+                            Envío a domicilio
+                        </div>
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                            Estacionamiento
+                        </div>
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                            </svg>
+                            Área al aire libre
+                        </div>
+                    </div>
+                    
+                    <div class="horarios">
+                        <p><strong>Horarios:</strong></p>
+                        <table class="horarios-tabla">
+                            <tr>
+                                <td>Lunes a Viernes</td>
+                                <td>12:00 - 22:00</td>
+                            </tr>
+                            <tr>
+                                <td>Sábados y Domingos</td>
+                                <td>11:00 - 23:00</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sucursal 4 -->
+            <div class="sucursal-card">
+                <img src="./lugar/bar1.jpg" alt="Sucursal Shopping" class="sucursal-imagen">
+                <div class="sucursal-info">
+                    <h2 class="sucursal-nombre">Sucursal Shopping</h2>
+                    <p class="sucursal-direccion">Shopping Plaza, Local 45, Piso 2</p>
+                    
+                    <div>
+                        <span class="sucursal-estado abierto">ABIERTO AHORA</span>
+                        <span>Cierra a las 21:00</span>
+                    </div>
+                    
+                    <div class="servicios-adicionales">
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0H4zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zm-2.5 4a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm-3-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
+                            Menú express
+                        </div>
+                        <div class="servicio">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+                            </svg>
+                            Wi-Fi gratis
+                        </div>
+                    </div>
+                    
+                    <div class="horarios">
+                        <p><strong>Horarios:</strong></p>
+                        <table class="horarios-tabla">
+                            <tr>
+                                <td>Lunes a Domingo</td>
+                                <td>10:00 - 21:00</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: incluye aquí tu footer habitual -->
+    <footer>
+        <!-- Tu footer aquí -->
+        <p>&copy; 2025 Tu Restaurante - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Script para mostrar estado actual (abierto/cerrado) basado en la hora real -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Configuración del cambio de tema
+            const themeToggle = document.getElementById('themeToggle');
+            
+            // Comprueba si hay una preferencia guardada
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            
+            // Aplica el modo según la preferencia guardada
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                themeToggle.textContent = '🌙';
+            }
+            
+            // Agrega el manejador de eventos al botón
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                
+                // Actualiza el icono del botón
+                const isDark = document.body.classList.contains('dark-mode');
+                themeToggle.textContent = isDark ? '🌙' : '☀️';
+                
+                // Guarda la preferencia
+                localStorage.setItem('darkMode', isDark.toString());
+            });
+            
+            // Esta función actualiza el estado de apertura de las sucursales
+            function actualizarEstadoSucursales() {
+                // Obtener la fecha y hora actual
+                const ahora = new Date();
+                const diaSemana = ahora.getDay(); // 0 es domingo, 1 es lunes, etc.
+                const hora = ahora.getHours();
+                const minutos = ahora.getMinutes();
+                
+                // Convertir a formato decimal para comparaciones más fáciles (ej: 14:30 = 14.5)
+                const horaDecimal = hora + (minutos / 60);
+                
+                // Seleccionar todas las tarjetas de sucursales
+                const sucursales = document.querySelectorAll('.sucursal-card');
+                
+                // Para cada sucursal, determinar si está abierta o cerrada
+                sucursales.forEach((sucursal, index) => {
+                    let estaAbierto = false;
+                    let mensajeHorario = '';
+                    
+                    // Lógica para determinar si está abierto
+                    // [Código existente para determinar el estado]
+                    
+                    // Actualizar el DOM con el estado
+                    const estadoElement = sucursal.querySelector('.sucursal-estado');
+                    const mensajeElement = estadoElement.nextElementSibling;
+                    
+                    if (estaAbierto) {
+                        estadoElement.textContent = 'ABIERTO AHORA';
+                        estadoElement.className = 'sucursal-estado abierto';
+                    } else {
+                        estadoElement.textContent = 'CERRADO';
+                        estadoElement.className = 'sucursal-estado cerrado';
+                    }
+                    
+                    mensajeElement.textContent = mensajeHorario;
+                });
+            }
+            
+            // Ejecutar la función al cargar la página
+            actualizarEstadoSucursales();
+            
+            // Actualizar cada minuto (opcional)
+            setInterval(actualizarEstadoSucursales, 60000);
+        });
+    </script>
+</body>
+</html>

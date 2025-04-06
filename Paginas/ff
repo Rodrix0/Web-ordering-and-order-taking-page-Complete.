@@ -1,0 +1,103 @@
+        /* Estilos específicos para la página de sucursales */
+        .sucursales-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sucursal-card {
+            width: calc(50% - 20px);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .sucursal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sucursal-imagen {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .sucursal-info {
+            padding: 15px;
+        }
+
+        .sucursal-nombre {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .sucursal-direccion {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .sucursal-estado {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .abierto {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+
+        .cerrado {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+
+        .servicios-adicionales {
+            margin-top: 15px;
+        }
+
+        .servicio {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+            color: #555;
+        }
+
+        .servicio svg {
+            margin-right: 5px;
+        }
+
+        .horarios {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .horarios-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        .horarios-tabla td {
+            padding: 3px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .horarios-tabla td:last-child {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .sucursal-card {
+                width: 100%;
+            }
+        }
