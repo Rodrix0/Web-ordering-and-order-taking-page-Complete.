@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Hamburguesas - BurgerDelight</title>
+    <link rel="stylesheet" href="/Pagina_config/stylesMenuComida.css">
+    <link rel="stylesheet" href="/Pagina_config/configMenuComida.css">
+</head>
+<body>
+    <header>
+        <div class="theme-toggle">
+            <span id="theme-text">Modo Oscuro</span>
+            <button id="themeToggle" aria-label="Cambiar tema">☀️</button>
+        </div>
+        <h1 class="logo">BurgerDelight</h1>
+        <h2>Menú de Hamburguesas</h2>
+        <a href="pagina.html" class="back-btn">← Volver al inicio</a>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="menu-grid">
+                <div class="burger-card">
+                    <div class="burger-img">Hamburguesa Común</div>
+                    <div class="burger-info">
+                        <h3 class="burger-name">Hamburguesa Común</h3>
+                        <p class="burger-price">$1500</p>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Común')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Común')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="burger-card">
+                    <div class="burger-img">Hamburguesa Doble</div>
+                    <div class="burger-info">
+                        <h3 class="burger-name">Hamburguesa Doble</h3>
+                        <p class="burger-price">$1800</p>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Doble')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Doble')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="burger-card">
+                    <div class="burger-img">Hamburguesa Triple</div>
+                    <div class="burger-info">
+                        <h3 class="burger-name">Hamburguesa Triple</h3>
+                        <p class="burger-price">$2100</p>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Triple')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Triple')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="burger-card">
+                    <div class="burger-img">Hamburguesa con Queso</div>
+                    <div class="burger-info">
+                        <h3 class="burger-name">Hamburguesa con Queso</h3>
+                        <p class="burger-price">$1600</p>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa con Queso')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa con Queso')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="burger-card">
+                    <div class="burger-img">Hamburguesa con Bacon</div>
+                    <div class="burger-info">
+                        <h3 class="burger-name">Hamburguesa con Bacon</h3>
+                        <p class="burger-price">$1700</p>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa con Bacon')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa con Bacon')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="burger-card">
+                    <div class="burger-img">Hamburguesa Con Tomate y Lechuga</div>
+                    <div class="burger-info">
+                        <h3 class="burger-name">Hamburguesa Con Tomate y Lechuga</h3>
+                        <p class="burger-price">$1600</p>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Con Tomate y Lechuga')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Con Tomate y Lechuga')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 BurgerDelight. Todos los derechos reservados.</p>
+        <p>Para pedidos y consultas: info@burgerdelight.com</p>
+    </footer>
+    
+    <!-- Modal para agrandar -->
+    <div id="upgradeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('upgradeModal')">&times;</span>
+            <h2>Agrandar <span id="upgradeBurgerName"></span></h2>
+            <div class="option-list">
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Agrandar papas (+$300)
+                    </label>
+                    <span>$300</span>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Agrandar bebida (+$200)
+                    </label>
+                    <span>$200</span>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Doble carne (+$500)
+                    </label>
+                    <span>$500</span>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Extra queso (+$150)
+                    </label>
+                    <span>$150</span>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('upgradeModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="addToCart()">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para comprar -->
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('buyModal')">&times;</span>
+            <h2>Comprar <span id="buyBurgerName"></span></h2>
+            <p>¿Deseas agregar esta hamburguesa al carrito?</p>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('buyModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="purchase()">Confirmar compra</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Variables para almacenar la hamburguesa seleccionada
+        let selectedBurger = '';
+        
+        // Mostrar modal para agrandar
+        function showUpgradeModal(burgerName) {
+            selectedBurger = burgerName;
+            document.getElementById('upgradeBurgerName').textContent = burgerName;
+            document.getElementById('upgradeModal').style.display = 'block';
+        }
+        
+        // Mostrar modal para comprar
+        function showBuyModal(burgerName) {
+            selectedBurger = burgerName;
+            document.getElementById('buyBurgerName').textContent = burgerName;
+            document.getElementById('buyModal').style.display = 'block';
+        }
+        
+        // Cerrar modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Agregar al carrito después de agrandar
+        function addToCart() {
+            alert('¡Se agregó ' + selectedBurger + ' con extras al carrito!');
+            closeModal('upgradeModal');
+        }
+        
+        // Realizar compra directa
+        function purchase() {
+            alert('¡Gracias por comprar ' + selectedBurger + '!');
+            closeModal('buyModal');
+        }
+        
+        // El código de TypeScript compilado
+        document.addEventListener('DOMContentLoaded', function () {
+            // Configuración del cambio de tema
+            const themeToggle = document.getElementById('themeToggle');
+            const themeText = document.getElementById('theme-text');
+            
+            // Comprueba si hay una preferencia guardada
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            
+            // Aplica el modo según la preferencia guardada
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+                themeToggle.textContent = '🌙';
+                themeText.textContent = 'Modo Claro';
+            }
+            
+            // Agrega el manejador de eventos al botón
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                
+                // Actualiza el icono del botón y el texto
+                const isDark = document.body.classList.contains('dark-mode');
+                themeToggle.textContent = isDark ? '🌙' : '☀️';
+                themeText.textContent = isDark ? 'Modo Claro' : 'Modo Oscuro';
+                
+                // Guarda la preferencia
+                localStorage.setItem('darkMode', isDark.toString());
+            });
+        });
+    </script>
+</body>
+</html>

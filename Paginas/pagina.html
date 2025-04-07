@@ -4,294 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio Web</title>
-    <style>
-                 /* negro a blanco ------------------------------------------------------------------------------------*/
-
-        :root {
-            --background-color: #ffffff;
-            --text-color: #333333;
-            --header-bg: #f0f0f0;
-            --card-bg: #f9f9f9;
-            --border-color: #dddddd;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        body.dark-mode {
-            --background-color: #121212;
-            --text-color: #e0e0e0;
-            --header-bg: #1e1e1e;
-            --card-bg: #2d2d2d;
-            --border-color: #444444;
-            --shadow-color: rgba(0, 0, 0, 0.3);
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            transition: var(--transition);
-        }
-
-        header {
-            background-color: var(--header-bg);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px var(--shadow-color);
-            transition: var(--transition);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            padding: 5px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover {
-            background-color: var(--border-color);
-        }
-
-        nav {
-            display: flex;
-            gap: 1rem;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            background-color: var(--border-color);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            opacity: 0.8;
-        }
-                 /* Tarjetas ------------------------------------------------------------------------------------*/
+    <link rel="stylesheet" href="/Pagina_config/styles.css">
+    <link rel="stylesheet" href="/Pagina_config/config.css">
 
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px var(--shadow-color);
-            transition: var(--transition);
-            height: 300px;
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px var(--shadow-color);
-            /* Aumentamos la altura para mostrar todo el contenido */
-            height: auto;
-            min-height: 450px;
-            z-index: 10;
-        }
-
-        .card-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .card-description {
-            margin-top: 10px;
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.3s ease, opacity 0.3s ease;
-        }
-
-        .card:hover .card-description {
-            /* Aumentamos el max-height para asegurar que quepa todo el contenido */
-            max-height: 500px;
-            opacity: 1;
-        }
-
-        footer {
-            background-color: var(--header-bg);
-            padding: 2rem 1rem;
-            text-align: center;
-            margin-top: 3rem;
-            transition: var(--transition);
-        }
-         /* Estilos del carrusel ------------------------------------------------------------------------------------*/
-        .carousel-container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px var(--shadow-color);
-            height: 450px; /* Aumentado para dar más espacio */
-            transition: var(--transition);
-            background-color: var(--card-bg);
-        }
-
-        .carousel-slide {
-            display: none;
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .carousel-slide.active {
-            display: block;
-            animation: fadeIn 1s ease;
-        }
-
-        .carousel-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .carousel-info {
-            padding: 1.5rem 1.5rem 3rem; /* Aumentado el padding inferior para dejar espacio para los puntos */
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            transition: var(--transition);
-            position: relative; /* Para posicionar correctamente los puntos */
-        }
-
-        .carousel-info h3 {
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .carousel-info p {
-            margin: 0 0 1.5rem 0; /* Añadido margen inferior */
-            opacity: 0.9;
-        }
-
-        /* Controles de navegación */
-        .carousel-nav {
-            position: absolute;
-            bottom: 15px; /* Posición ajustada */
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            padding: 0.5rem; /* Reducido el padding */
-            gap: 0.5rem;
-            background-color: transparent; /* Para asegurar que no tenga fondo */
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--border-color);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .carousel-dot.active {
-            background-color: var(--text-color);
-            transform: scale(1.2);
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 40%;
-            transform: translateY(-50%);
-            background-color: var(--background-color);
-            color: var(--text-color);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: var(--transition);
-            z-index: 2;
-        }
-
-        .carousel-btn:hover {
-            opacity: 1;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        #prevBtn {
-            left: 10px;
-        }
-
-        #nextBtn {
-            right: 10px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0.4; }
-            to { opacity: 1; }
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="logo">Rodrix</div>
         <nav>
-            <a href="#">Inicio</a>
+            <a href="pagina.html">Inicio</a>
             <a href="#">Acerca de</a>
             <a href="sucursales.html">Servicios</a>
                         <a href="#">Contacto</a>
@@ -380,11 +102,13 @@
 
             // Datos del menú
             const menuItems = [
-                {
+            {
                     name: "Hamburguesas",
-                    image: "/Imagenes/Hamburguesa.jpg", // Reemplaza con la URL de tu imagen/300/180",
+                    image: "/Imagenes/Hamburguesa.jpg",
                     shortDescription: "Deliciosas hamburguesas caseras.",
-                    fullDescription: "Hamburguesa Comun <br> Hamburguesa Doble <br> Hamburguesa triple <br> Hamburguesa con Queso <br> Hamburguesa con Bacon <br> Hamburguesa Con Tomate  y Lechuga"
+                    fullDescription: "Hamburguesa Comun <br> Hamburguesa Doble <br> Hamburguesa triple <br> Hamburguesa con Queso <br> Hamburguesa con Bacon <br> Hamburguesa Con Tomate y Lechuga",
+                    pageUrl: "MenuHambur.html" // URL a la página específica
+
                 },
                 {
                     name: "Pizzas",
@@ -441,7 +165,7 @@
                     card.innerHTML = `
                         <img src="${item.image}" alt="${item.name}" class="card-image">
                         <div class="card-content">
-                            <h3>${item.name}</h3>
+                            <h3><a href="${item.pageUrl}">${item.name}</a></h3>
                             <p>${item.shortDescription}</p>
                             <div class="card-description">
                                 <p>${item.fullDescription}</p>
