@@ -115,25 +115,27 @@ main {
 }
 
 .burger-card {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    transition: transform 0.3s ease;
-    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: white;
 }
 
 .burger-card:hover {
     transform: translateY(-5px);
 }
 
-.burger-img {
-    height: 180px;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #333;
+
+.burger-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .burger-info {

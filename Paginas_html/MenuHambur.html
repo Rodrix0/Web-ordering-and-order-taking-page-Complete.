@@ -13,7 +13,6 @@
             <span id="theme-text">Modo Oscuro</span>
             <button id="themeToggle" aria-label="Cambiar tema">☀️</button>
         </div>
-        <h1 class="logo">BurgerDelight</h1>
         <h2>Menú de Hamburguesas</h2>
         <a href="pagina.html" class="back-btn">← Volver al inicio</a>
     </header>
@@ -22,7 +21,9 @@
         <div class="container">
             <div class="menu-grid">
                 <div class="burger-card">
-                    <div class="burger-img">Hamburguesa Común</div>
+                    <div class="burger-img">
+                        <img src="/Paginas_html/Imagenes de Comidas/HamburComun.jpg" alt="Hamburguesa Común">
+                    </div>
                     <div class="burger-info">
                         <h3 class="burger-name">Hamburguesa Común</h3>
                         <p class="burger-price">$1500</p>
@@ -201,7 +202,7 @@
             if (isDarkMode) {
                 document.body.classList.add('dark-mode');
                 themeToggle.textContent = '🌙';
-                themeText.textContent = 'Modo Claro';
+                themeText.textContent = 'Modo Oscuro';
             }
             
             // Agrega el manejador de eventos al botón
@@ -211,7 +212,7 @@
                 // Actualiza el icono del botón y el texto
                 const isDark = document.body.classList.contains('dark-mode');
                 themeToggle.textContent = isDark ? '🌙' : '☀️';
-                themeText.textContent = isDark ? 'Modo Claro' : 'Modo Oscuro';
+                themeText.textContent = isDark ? 'Modo Oscuro' : 'Modo Claro';
                 
                 // Guarda la preferencia
                 localStorage.setItem('darkMode', isDark.toString());

@@ -163,9 +163,11 @@
                     card.className = 'card';
                     
                     card.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}" class="card-image">
+                        <a href="${item.pageUrl}">
+                            <img src="${item.image}" alt="${item.name}" class="card-image">
+                        </a>
                         <div class="card-content">
-                            <h3><a href="${item.pageUrl}">${item.name}</a></h3>
+                            <h3>${item.name}</h3>
                             <p>${item.shortDescription}</p>
                             <div class="card-description">
                                 <p>${item.fullDescription}</p>
@@ -176,6 +178,7 @@
                     cardsContainer.appendChild(card);
                 });
             }
+
             
             // Llamar a la función para crear las tarjetas
             createMenuCards();
