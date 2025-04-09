@@ -17,6 +17,9 @@
                         <a href="#">Contacto</a>
         </nav>
         <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+        <a href="#" id="cartButton" class="cart-button">
+            🛒 <span id="cartCount">0</span>
+        </a>
     </header>
     
     <main>
@@ -27,10 +30,26 @@
                     <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburComun.jpg" alt="Hamburguesa Clásica" class="card-image">
                     <div class="card-content">
                         <h3>Hamburguesa Comun</h3>
-                        <p>$12.99</p>
+                        <p>$5000</p>
                         <div class="card-description">
                             Una deliciosa hamburguesa con carne de res a la parrilla, queso cheddar, 
                             lechuga fresca, tomate, cebolla roja y nuestra salsa especial, 
+                            servida en un pan artesanal tostado.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Comun')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Comun')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburDoble.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Doble</h3>
+                        <p>$7000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, 
                             servida en un pan artesanal tostado.
                         </div>
                         <div class="actions">
@@ -40,27 +59,15 @@
                     </div>
                 </div>
                 
-                <div class="burger-card">
-                    <div class="burger-img">
-                        <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburDoble.jpg" alt="Hamburguesa Doble">
-                    </div>                    
-                    <div class="burger-info">
-                        <h3 class="burger-name">Hamburguesa Doble</h3>
-                        <p class="burger-price">$1800</p>
-                        <div class="actions">
-                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Doble')">Agrandar</button>
-                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Doble')">Comprar</button>
+                <div class="card">
+                    <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburTriple.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Triple</h3>
+                        <p>$10000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con triple carne de res a la parrilla, queso cheddar, 
+                            servida en un pan artesanal tostado.
                         </div>
-                    </div>
-                </div>
-                
-                <div class="burger-card">
-                    <div class="burger-img">
-                        <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburTriple.jpg" alt="Hamburguesa Triple">
-                    </div> 
-                    <div class="burger-info">
-                        <h3 class="burger-name">Hamburguesa Triple</h3>
-                        <p class="burger-price">$2100</p>
                         <div class="actions">
                             <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Triple')">Agrandar</button>
                             <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Triple')">Comprar</button>
@@ -68,41 +75,49 @@
                     </div>
                 </div>
                 
-                <div class="burger-card">
-                    <div class="burger-img">
-                        <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburConQueso.jpg" alt="Hamburguesa Con Queso">
-                    </div> 
-                    <div class="burger-info">
-                        <h3 class="burger-name">Hamburguesa con Queso</h3>
-                        <p class="burger-price">$1600</p>
+                <div class="card">
+                    <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburConQueso.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Con queso</h3>
+                        <p>$8000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, 
+                            servida en un pan artesanal tostado.
+                        </div>
                         <div class="actions">
-                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa con Queso')">Agrandar</button>
-                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa con Queso')">Comprar</button>
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Con queso')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Con queso')">Comprar</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="burger-card">
-                    <div class="burger-img">
-                        <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburBacon.jpg" alt="Hamburguesa Con Bacon">
-                    </div> 
-                    <div class="burger-info">
-                        <h3 class="burger-name">Hamburguesa con Bacon</h3>
-                        <p class="burger-price">$1700</p>
+                <div class="card">
+                    <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburBacon.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Con bacon</h3>
+                        <p>$7000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con carne de res a la parrilla, queso cheddar, 
+                            bacon y nuestra salsa especial, 
+                            servida en un pan artesanal tostado.
+                        </div>
                         <div class="actions">
-                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa con Bacon')">Agrandar</button>
-                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa con Bacon')">Comprar</button>
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Con bacon')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Con bacon')">Comprar</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="burger-card">
-                    <div class="burger-img">
-                        <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburConTomate.jpg" alt="Hamburguesa Con Tomate y Lechuga">
-                    </div> 
-                    <div class="burger-info">
-                        <h3 class="burger-name">Hamburguesa Con Tomate y Lechuga</h3>
-                        <p class="burger-price">$1600</p>
+                <div class="card">
+                    <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburConTomate.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Con Tomate y Lechuga</h3>
+                        <p>$12000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, 
+                            lechuga fresca, tomate, cebolla roja y nuestra salsa especial, 
+                            servida en un pan artesanal tostado.
+                        </div>
                         <div class="actions">
                             <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Con Tomate y Lechuga')">Agrandar</button>
                             <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Con Tomate y Lechuga')">Comprar</button>
@@ -112,6 +127,7 @@
             </div>
         </div>
     </main>
+    <script src="cart.js"></script>
     
     <!-- Footer -->
     <footer>
@@ -126,27 +142,21 @@
             <div class="option-list">
                 <div class="option">
                     <label>
-                        <input type="checkbox"> Agrandar papas (+$300)
+                        <input type="checkbox"> Agrandar papas (+$3000)
                     </label>
-                    <span>$300</span>
+                    <span>$3000</span>
                 </div>
                 <div class="option">
                     <label>
-                        <input type="checkbox"> Agrandar bebida (+$200)
+                        <input type="checkbox"> Agregar carne (+$2500)
                     </label>
-                    <span>$200</span>
+                    <span>$2500</span>
                 </div>
                 <div class="option">
                     <label>
-                        <input type="checkbox"> Doble carne (+$500)
+                        <input type="checkbox"> Extra queso (+$2000)
                     </label>
-                    <span>$500</span>
-                </div>
-                <div class="option">
-                    <label>
-                        <input type="checkbox"> Extra queso (+$150)
-                    </label>
-                    <span>$150</span>
+                    <span>$2000</span>
                 </div>
             </div>
             <div class="modal-buttons">
@@ -168,71 +178,24 @@
             </div>
         </div>
     </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cartModal')">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Los items del carrito se insertarán aquí dinámicamente -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('cartModal')">Seguir comprando</button>
+                <button class="btn btn-primary" onclick="checkout()">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
     
-    <script>
-        // Variables para almacenar la hamburguesa seleccionada
-        let selectedBurger = '';
-        
-        // Mostrar modal para agrandar
-        function showUpgradeModal(burgerName) {
-            selectedBurger = burgerName;
-            document.getElementById('upgradeBurgerName').textContent = burgerName;
-            document.getElementById('upgradeModal').style.display = 'block';
-        }
-        
-        // Mostrar modal para comprar
-        function showBuyModal(burgerName) {
-            selectedBurger = burgerName;
-            document.getElementById('buyBurgerName').textContent = burgerName;
-            document.getElementById('buyModal').style.display = 'block';
-        }
-        
-        // Cerrar modal
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-        
-        // Agregar al carrito después de agrandar
-        function addToCart() {
-            alert('¡Se agregó ' + selectedBurger + ' con extras al carrito!');
-            closeModal('upgradeModal');
-        }
-        
-        // Realizar compra directa
-        function purchase() {
-            alert('¡Gracias por comprar ' + selectedBurger + '!');
-            closeModal('buyModal');
-        }
-        
-        // El código de TypeScript compilado
-        document.addEventListener('DOMContentLoaded', function () {
-            // Configuración del cambio de tema
-            const themeToggle = document.getElementById('themeToggle');
-            const themeText = document.getElementById('theme-text');
-            
-            // Comprueba si hay una preferencia guardada
-            const isDarkMode = localStorage.getItem('darkMode') === 'true';
-            
-            // Aplica el modo según la preferencia guardada
-            if (isDarkMode) {
-                document.body.classList.add('dark-mode');
-                themeToggle.textContent = '🌙';
-                themeText.textContent = 'Modo Oscuro';
-            }
-            
-            // Agrega el manejador de eventos al botón
-            themeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-                
-                // Actualiza el icono del botón y el texto
-                const isDark = document.body.classList.contains('dark-mode');
-                themeToggle.textContent = isDark ? '🌙' : '☀️';
-                themeText.textContent = isDark ? 'Modo Oscuro' : 'Modo Claro';
-                
-                // Guarda la preferencia
-                localStorage.setItem('darkMode', isDark.toString());
-            });
-        });
-    </script>
+    <script src="/Configuraciones/carrito.js"></script>
 </body>
 </html>
