@@ -9,27 +9,33 @@
 </head>
 <body>
     <header>
-        <div class="theme-toggle">
-            <span id="theme-text">Modo Oscuro</span>
-            <button id="themeToggle" aria-label="Cambiar tema">☀️</button>
-        </div>
-        <h2>Menú de Hamburguesas</h2>
-        <a href="/Paginas_html/pagina.html" class="back-btn">← Volver al inicio</a>
+        <div class="logo">Rodrix</div>
+        <nav>
+            <a href="/Paginas_html/pagina.html">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="/Paginas_html/sucursales.html">Servicios</a>
+                        <a href="#">Contacto</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
     </header>
     
     <main>
         <div class="container">
-            <div class="menu-grid">
-                <div class="burger-card">
-                    <div class="burger-img">
-                        <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburComun.jpg" alt="Hamburguesa Común">
-                    </div>
-                    <div class="burger-info">
-                        <h3 class="burger-name">Hamburguesa Común</h3>
-                        <p class="burger-price">$1500</p>
+            <div class="cards">
+                <!-- Hamburguesa 1 -->
+                <div class="card">
+                    <img src="/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburComun.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Comun</h3>
+                        <p>$12.99</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con carne de res a la parrilla, queso cheddar, 
+                            lechuga fresca, tomate, cebolla roja y nuestra salsa especial, 
+                            servida en un pan artesanal tostado.
+                        </div>
                         <div class="actions">
-                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Común')">Agrandar</button>
-                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Común')">Comprar</button>
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Doble')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Doble')">Comprar</button>
                         </div>
                     </div>
                 </div>
