@@ -63,10 +63,9 @@
         });
         </script>
 
+        <div id="menuCards" class="cards"></div>
 
-        <section class="cards" id="menuCards">
-            <!-- Las tarjetas se llenarán dinámicamente con TypeScript -->
-        </section>
+
     </main>
 
     <footer>
@@ -102,13 +101,19 @@
 
             // Datos del menú
             const menuItems = [
-            {
+                {
+                    name: "Ofertas",
+                    image: "/Imagenes/Ofertas.jpg",
+                    shortDescription: "Descuentos especiales para nuestros clientes.",
+                    fullDescription: "Descuentos en hamburguesas <br> Descuentos en pizzas <br> Descuentos en empanadas <br>",
+                    pageUrl: "/MenuComidas/MenuOfertas.html"
+                },
+                {
                     name: "Hamburguesas",
                     image: "/Imagenes/Hamburguesa.jpg",
                     shortDescription: "Deliciosas hamburguesas caseras.",
                     fullDescription: "Hamburguesa Comun <br> Hamburguesa Doble <br> Hamburguesa triple <br> Hamburguesa con Queso <br> Hamburguesa con Bacon <br> Hamburguesa Con Tomate y Lechuga",
-                    pageUrl: "/MenuComidas/MenuHambur.html" // URL a la página específica
-
+                    pageUrl: "/MenuComidas/MenuHambur.html"
                 },
                 {
                     name: "Pizzas",
@@ -163,9 +168,60 @@
 
             // Función para crear las tarjetas del menú
             function createMenuCards() {
+                console.log("Iniciando función createMenuCards");
+                
+                // Obtener el contenedor
                 const cardsContainer = document.getElementById('menuCards');
                 
-                menuItems.forEach(item => {
+                // Verificar si el contenedor existe
+                if (!cardsContainer) {
+                    console.error("ERROR: No se encontró el elemento con ID 'menuCards'");
+                    return;
+                }
+                
+                console.log("Contenedor encontrado, generando tarjetas...");
+                
+                // Limpiar el contenedor antes de agregar nuevas tarjetas
+                cardsContainer.innerHTML = '';
+                
+                // Agregar la tarjeta de Ofertas primero (será la primera en el array reordenado)
+                const ofertaItem = menuItems[0];
+                
+                if (ofertaItem && ofertaItem.name === "Ofertas") {
+                    console.log("Creando tarjeta destacada para Ofertas");
+                    
+                    // Crear contenedor para la oferta destacada
+                    const featuredContainer = document.createElement('div');
+                    featuredContainer.className = 'featured-offer-container';
+                    
+                    // Crear la tarjeta de oferta
+                    const featuredCard = document.createElement('div');
+                    featuredCard.className = 'featured-offer';
+                    
+                    featuredCard.innerHTML = `
+                        <a href="${ofertaItem.pageUrl}">
+                            <img src="${ofertaItem.image}" alt="${ofertaItem.name}" class="card-image">
+                            <span class="featured-badge">¡Oferta Especial!</span>
+                        </a>
+                        <div class="card-content">
+                            <h3>${ofertaItem.name}</h3>
+                            <p>${ofertaItem.shortDescription}</p>
+                            <div class="card-description">
+                                <p>${ofertaItem.fullDescription}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Añadir la tarjeta al contenedor y el contenedor al DOM
+                    featuredContainer.appendChild(featuredCard);
+                    cardsContainer.appendChild(featuredContainer);
+                }
+                
+                // Mostrar el resto de los ítems (empezando desde el índice 1)
+                for (let i = 1; i < menuItems.length; i++) {
+                    const item = menuItems[i];
+                    console.log(`Creando tarjeta para ${item.name}`);
+                    
                     const card = document.createElement('div');
                     card.className = 'card';
                     
@@ -183,12 +239,22 @@
                     `;
                     
                     cardsContainer.appendChild(card);
-                });
+                }
+                
+                console.log("Tarjetas generadas correctamente");
             }
 
-            
-            // Llamar a la función para crear las tarjetas
-            createMenuCards();
+            // Ejecutar cuando el DOM esté listo
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log("DOM cargado, llamando a createMenuCards");
+                createMenuCards();
+            });
+
+            // También intentar ejecutar el código directamente (por si el evento DOMContentLoaded ya pasó)
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                console.log("Documento ya cargado, ejecutando createMenuCards directamente");
+                setTimeout(createMenuCards, 100); // Pequeño retraso para asegurar que todo está listo
+            }
         });
     </script>
 </body>
