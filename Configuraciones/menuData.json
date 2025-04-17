@@ -1,0 +1,265 @@
+[
+    {
+        "name": "Ofertas",
+        "image": "/Imagenes/Ofertas.jpg",
+        "shortDescription": "Descuentos especiales para nuestros clientes.",
+        "fullDescription": "Descuentos en hamburguesas <br> Descuentos en pizzas <br> Descuentos en empanadas <br>",
+        "pageUrl": "/MenuComidas/MenuOfertas.html"
+    },
+    {
+        "name": "Hamburguesas",
+        "image": "/Imagenes/Hamburguesa.jpg",
+        "shortDescription": "Deliciosas hamburguesas caseras.",
+        "fullDescription": "Hamburguesa Comun <br> Hamburguesa Doble <br> Hamburguesa triple <br> Hamburguesa con Queso <br> Hamburguesa con Bacon <br> Hamburguesa Con Tomate y Lechuga",
+        "pageUrl": "/MenuComidas/MenuHambur.html",
+        "items": [
+            {
+                "name": "Hamburguesa Comun",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburComun.jpg",
+                "shortDescription": "Hamburguesa clásica con carne, queso y vegetales",
+                "fullDescription": "Una deliciosa hamburguesa con carne de res a la parrilla, queso cheddar, lechuga fresca, tomate, cebolla roja y nuestra salsa especial, servida en un pan artesanal tostado.",
+                "price": 5000,
+                "pageUrl": "/MenuComidas/MenuHambur.html"
+            },
+            {
+                "name": "Hamburguesa Doble",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburDoble.jpg",
+                "shortDescription": "Doble carne y queso",
+                "fullDescription": "Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, servida en un pan artesanal tostado.",
+                "price": 7000,
+                "pageUrl": "/MenuComidas/MenuHambur.html"
+            },
+            {
+                "name": "Hamburguesa Triple",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburTriple.jpg",
+                "shortDescription": "Triple carne y queso",
+                "fullDescription": "Una deliciosa hamburguesa con triple carne de res a la parrilla, queso cheddar, servida en un pan artesanal tostado.",
+                "price": 10000,
+                "pageUrl": "/MenuComidas/MenuHambur.html"
+            },
+            {
+                "name": "Hamburguesa Con queso",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburConQueso.jpg",
+                "shortDescription": "Hamburguesa con extra queso",
+                "fullDescription": "Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, servida en un pan artesanal tostado.",
+                "price": 8000,
+                "pageUrl": "/MenuComidas/MenuHambur.html"
+            },
+            {
+                "name": "Hamburguesa Con bacon",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburBacon.jpg",
+                "shortDescription": "Hamburguesa con bacon crujiente",
+                "fullDescription": "Una deliciosa hamburguesa con carne de res a la parrilla, queso cheddar, bacon y nuestra salsa especial, servida en un pan artesanal tostado.",
+                "price": 7000,
+                "pageUrl": "/MenuComidas/MenuHambur.html"
+            },
+            {
+                "name": "Hamburguesa Con Tomate y Lechuga",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Hambur/HamburConTomate.jpg",
+                "shortDescription": "Hamburguesa completa con vegetales frescos",
+                "fullDescription": "Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, lechuga fresca, tomate, cebolla roja y nuestra salsa especial, servida en un pan artesanal tostado.",
+                "price": 12000,
+                "pageUrl": "/MenuComidas/MenuHambur.html"
+            }
+        ]
+    },
+    {
+        "name": "Pizzas",
+        "image": "/Imagenes/Pizzas.jpg",
+        "shortDescription": "Pizzas con masa artesanal.",
+        "fullDescription": "Pizza a la Cabresa <br> Pizza de Pepperoni <br> Pizza de Jamón y Queso <br>",
+        "pageUrl": "/MenuComidas/MenuPizzas.html",
+        "items": [
+            {
+                "name": "Pizza con Mozarella",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Pizzas/PizzaMoza.jpg",
+                "shortDescription": "Pizza con salsa de tomate y mozzarella",
+                "fullDescription": "Deliciosa pizza con salsa de tomate, mozzarella y orégano",
+                "price": 9000,
+                "pageUrl": "/MenuComidas/MenuPizzas.html"
+            },
+            {
+                "name": "Pizza a la napolitana",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Pizzas/PizzNapo.jpg",
+                "shortDescription": "Pizza con rodajas de pepperoni",
+                "fullDescription": "Pizza tradicional con rodajas de pepperoni y queso mozzarella",
+                "price": 9500,
+                "pageUrl": "/MenuComidas/MenuPizzas.html"
+            },
+            {
+                "name": "Pizza a la hawaiana",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Pizzas/PizzaHawa.jpg",
+                "shortDescription": "Pizza con jamón y queso mozzarella",
+                "fullDescription": "Pizza clásica con jamón y abundante queso mozzarella",
+                "price": 8500,
+                "pageUrl": "/MenuComidas/MenuPizzas.html"
+            },
+            {
+                "name": "Pizza Vegetariana",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Pizzas/PizzaVege.jpg",
+                "shortDescription": "Pizza con jamón y queso mozzarella",
+                "fullDescription": "Pizza clásica con jamón y abundante queso mozzarella",
+                "price": 8500,
+                "pageUrl": "/MenuComidas/MenuPizzas.html"
+            },
+            {
+                "name": "Pizza Cuatro Quesos",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Pizzas/PizzaCuatroQuesos.jpg",
+                "shortDescription": "Pizza con salsa de tomate y mozzarella",
+                "fullDescription": "Deliciosa pizza con salsa de tomate, mozzarella y orégano",
+                "price": 9000,
+                "pageUrl": "/MenuComidas/MenuPizzas.html"
+            },
+            {
+                "name": "Pizza de Pepperoni",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Pizzas/PizzaPepperoni.jpg",
+                "shortDescription": "Pizza con salsa de tomate y mozzarella",
+                "fullDescription": "Deliciosa pizza con salsa de tomate, mozzarella y orégano",
+                "price": 9000,
+                "pageUrl": "/MenuComidas/MenuPizzas.html"
+            }
+        ]
+    },
+    {
+        "name": "Empanadas",
+        "image": "/Imagenes/Empanada.jpg",
+        "shortDescription": "Empanadas con diversos rellenos.",
+        "fullDescription": "Empanadas al Horno <br> Empanadas Fritas <br> Empanada de Carne <br>",
+        "pageUrl": "/MenuComidas/MenuEmpanadas.html"
+    },
+    {
+        "name": "Postres",
+        "image": "/Imagenes/Postre.jpg",
+        "shortDescription": "Deliciosos postres caseros.",
+        "fullDescription": "Tiramisu <br> Chocotorta <br> Wafle <br>",
+        "pageUrl": "/MenuComidas/MenuPostres.html"
+    },
+    {
+        "name": "Ensaladas",
+        "image": "/Imagenes/Ensalada.jpg",
+        "shortDescription": "Ensaladas frescas y saludables.",
+        "fullDescription": "Ensalada Rusa <br> Ensalada Cesar <br> Ensalada Española <br>",
+        "pageUrl": "/MenuComidas/MenuEnsaladas.html",
+        "items": [
+            {
+                "name": "Ensadala de Arroz",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Ensalada/Arroz.jpg",
+                "shortDescription": "Ensalada de arroz con verduras",
+                "fullDescription": "Ensalada de arroz con verduras y salsa de tomate",
+                "price": 7000,
+                "pageUrl": "/MenuComidas/MenuEnsaladas.html"
+            },
+            {
+                "name": "Ensalada Cesar",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Ensalada/Cesar.jpg",
+                "shortDescription": "Ensalada Cesar",
+                "fullDescription": "Ensalada Cesar con verduras y salsa de tomate",
+                "price": 7000,
+                "pageUrl": "/MenuComidas/MenuEnsaladas.html"
+            },
+            {
+                "name": "Ensalada Española",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Ensalada/Española.jpg",
+                "shortDescription": "Ensalada Espanola",
+                "fullDescription": "Ensalada Espanola con verduras y salsa de tomate",
+                "price": 10000,
+                "pageUrl": "/MenuComidas/MenuEnsaladas.html"
+            },
+            {
+                "name": "Ensalada Rusa",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Ensalada/Rusa.jpg",
+                "shortDescription": "Ensalada Rusa",
+                "fullDescription": "Ensalada Rusa con verduras y salsa de tomate",
+                "price": 5000,
+                "pageUrl": "/MenuComidas/MenuEnsaladas.html"
+            },
+            {
+                "name": "Ensalada de Rucula",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Ensalada/Rucula.jpg",
+                "shortDescription": "Ensalada Mixta",
+                "fullDescription": "Ensalada Mixta con verduras y salsa de tomate",
+                "price": 12000,
+                "pageUrl": "/MenuComidas/MenuEnsaladas.html"
+            },
+            {
+                "name": "Ensalada de Lechuga y tomate",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Ensalada/Lechuga.jpg",
+                "shortDescription": "Ensalada de Lechuga y Tomate",
+                "fullDescription": "Ensalada Mixta con verduras y salsa de tomate",
+                "price": 8000,
+                "pageUrl": "/MenuComidas/MenuEnsaladas.html"
+            }
+        ]
+    },
+    {
+        "name": "Bebidas",
+        "image": "/Imagenes/Bebidas.jpg",
+        "shortDescription": "Refrescantes opciones de bebidas.",
+        "fullDescription": "Coca-Cola <br> Sprite <br> Fanta <br>",
+        "pageUrl": "/MenuComidas/MenuBebidas.html"
+    },
+    {
+        "name": "Tartas",
+        "image": "/Imagenes/Tarta.jpg",
+        "shortDescription": "Tartas saladas para todos los gustos.",
+        "fullDescription": "Tartas Jamon y Queso <br> Tartas de Acelga <br> Tartas de Choclo <br>",
+        "pageUrl": "/MenuComidas/MenuTartas.html",
+        "items": [
+            {
+                "name": "Tarta de Jamon y Queso",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Tarta/JamYQueso.jpg",
+                "shortDescription": "Pizza con salsa de tomate y mozzarella",
+                "fullDescription": "Deliciosa pizza con salsa de tomate, mozzarella y orégano",
+                "price": 5000,
+                "pageUrl": "/MenuComidas/MenuTartas.html"
+            },
+            {
+                "name": "Tarta de Acelga",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Tarta/TartaAcelga.jpg",
+                "shortDescription": "Pizza con rodajas de pepperoni",
+                "fullDescription": "Pizza tradicional con rodajas de pepperoni y queso mozzarella",
+                "price": 7000,
+                "pageUrl": "/MenuComidas/MenuTartas.html"
+            },
+            {
+                "name": "Tarta de Atun,Acelga y Choclo",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Tarta/TartaAtun.jpg",
+                "shortDescription": "Pizza con jamón y queso mozzarella",
+                "fullDescription": "Pizza clásica con jamón y abundante queso mozzarella",
+                "price": 7000,
+                "pageUrl": "/MenuComidas/MenuTartas.html"
+            },
+            {
+                "name": "Tarta de Cebolla",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Tarta/TartaCebolla.jpg",
+                "shortDescription": "Pizza con jamón y queso mozzarella",
+                "fullDescription": "Pizza clásica con jamón y abundante queso mozzarella",
+                "price": 12000,
+                "pageUrl": "/MenuComidas/MenuTartas.html"
+            },
+            {
+                "name": "Tarta de Pescado",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Tarta/tartadePescado.jpg",
+                "shortDescription": "Pizza con jamón y queso mozzarella",
+                "fullDescription": "Pizza clásica con jamón y abundante queso mozzarella",
+                "price": 8500,
+                "pageUrl": "/MenuComidas/MenuTartas.html"
+            },
+            {
+                "name": "Tarta de choclo y Queso",
+                "image": "/MenuComidas/Imagenes de Comidas/Imagenes de Tarta/TartaQueso.jpg",
+                "shortDescription": "Pizza con jamón y queso mozzarella",
+                "fullDescription": "Pizza clásica con jamón y abundante queso mozzarella",
+                "price": 8000,
+                "pageUrl": "/MenuComidas/MenuTartas.html"
+            }
+        ]
+    },
+    {
+        "name": "Sándwiches",
+        "image": "/Imagenes/Sandwiches.jpg",
+        "shortDescription": "Sándwiches gourmet y tradicionales.",
+        "fullDescription": "Lomito de Pollo <br> Lomito de Carne <br> Sandwich de Milanesa <br>",
+        "pageUrl": "/MenuComidas/MenuSandwiches.html"
+    }
+]

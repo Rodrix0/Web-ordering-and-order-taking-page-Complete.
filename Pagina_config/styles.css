@@ -494,4 +494,142 @@ header {
         font-size: 1.2rem;
     }
 }
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
 
+#searchInput {
+    padding: 8px 12px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    width: 180px;
+    transition: width 0.3s;
+}
+
+#searchInput:focus {
+    width: 220px;
+    border-color: #ff6b6b;
+}
+
+#searchButton {
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+    background-color: #ff5252;
+}
+
+/* Estilos para los resultados de búsqueda */
+#searchResults {
+    position: absolute;
+    top: 60px;
+    right: 100px;
+    width: 320px;
+    max-height: 450px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 5px 0;
+}
+
+.search-result-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f8f8f8;
+}
+
+.search-result-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+}
+
+.search-result-info {
+    flex: 1;
+}
+
+.search-result-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.search-result-info p {
+    margin: 0 0 4px 0;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.search-result-info .price {
+    font-weight: 600;
+    color: #ff6b6b;
+}
+
+.category-tag {
+    display: inline-block;
+    font-size: 11px;
+    color: #fff;
+    background-color: #5d87ff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+/* Estilos para el modo oscuro */
+.dark-theme #searchResults {
+    background-color: #333;
+    border: 1px solid #444;
+}
+
+.dark-theme .search-result-item {
+    border-bottom-color: #444;
+}
+
+.dark-theme .search-result-item:hover {
+    background-color: #3a3a3a;
+}
+
+.dark-theme .search-result-info h4 {
+    color: #eee;
+}
+
+.dark-theme .search-result-info p {
+    color: #ccc;
+}
+
+.dark-theme .search-result-info .price {
+    color: #ff8a8a;
+}
+
+.dark-theme .category-tag {
+    background-color: #4a6cb7;
+}

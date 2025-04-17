@@ -17,7 +17,14 @@
             <a href="/Paginas_html/sucursales.html">Servicios</a>
             <a href="/Paginas_html/Contacto.html">Contacto</a>
         </nav>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar comida...">
+            <button id="searchButton" aria-label="Buscar">🔍</button>
+        </div>
         <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+        <a href="#" id="cartButton" class="cart-button">
+            🛒 <span id="cartCount">0</span>
+        </a>
     </header>
 
     <main>
@@ -70,5 +77,8 @@
 
     <!-- Scripts para el menú y tema - Usar solo main.js para enfoque modular -->
     <script type="module" src="/Configuraciones/main.js"></script>
+    <script type="module" src="/Configuraciones/busqueda.js"></script>
+    
+
 </body>
 </html>
