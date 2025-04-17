@@ -33,17 +33,23 @@ header {
     align-items: center;
     box-shadow: 0 2px 5px var(--shadow-color);
     transition: var(--transition);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    flex: 1; /* Ocupa espacio a la izquierda */
 }
 
 /* Estilo para la barra de navegación */
 nav {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex: 2; /* Otorga más espacio a la navegación para centrarla */
 }
 
 /* Estilo de la lista de navegación */
@@ -53,6 +59,7 @@ nav ul {
     margin: 0;
     padding: 0;
     gap: 1rem;
+    justify-content: center; /* Centra los elementos de la lista */
 }
 
 nav li {
@@ -78,6 +85,11 @@ nav a.active {
     background-color: var(--border-color);
     font-weight: bold;
 }
+.theme-container {
+    flex: 1; /* Ocupa espacio a la derecha */
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+}
 
 /* Estilo para el botón de tema */
 .theme-toggle {
@@ -93,7 +105,6 @@ nav a.active {
     width: 40px;
     height: 40px;
     transition: var(--transition);
-    margin-left: 1rem;
 }
 
 .theme-toggle:hover {
@@ -229,58 +240,170 @@ nav a.active {
     }
 }
 
-/* Responsive para móviles */
-@media (max-width: 768px) {
+/* === GAMA BAJA: <= 360px === */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .card,
+    .featured-offer {
+        height: auto;
+        padding: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .carousel-info h3 {
+        font-size: 1rem;
+    }
+
+    .carousel-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* === GAMA MEDIA: <= 480px === */
+@media (max-width: 480px) {
     header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
-    .logo-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-    
+
     nav {
-        width: 100%;
-    }
-    
-    nav ul {
         flex-direction: column;
         width: 100%;
     }
-    
+
     nav a {
         width: 100%;
-        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .featured-offer {
+        height: auto;
+    }
+
+    .carousel-container {
+        height: auto;
+    }
+
+    .carousel-image {
+        height: 180px;
+    }
+}
+
+/* === GAMA ALTA: <= 768px === */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .card,
+    .featured-offer {
+        min-height: 400px;
+    }
+
+    .carousel-image {
+        height: 250px;
+    }
+}
+/* Mejoras para el header */
+header {
+    background-color: var(--header-bg);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: var(--transition);
+    position: sticky; /* Hace que el header se mantenga visible al hacer scroll */
+    top: 0;
+    z-index: 100;
+}
+
+/* Botón para el menú hamburguesa en móviles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Mejoras específicas para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem;
     }
     
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        padding-left: 1rem;
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: row; /* horizontal */
+        justify-content: center;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+    
+    nav.active {
+        max-height: 300px; /* Esto se activará con JavaScript */
+    }
+
+    
+    nav a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem; /* Texto más pequeño */
+    }
+    
+    .logo-container {
+        margin-bottom: 0.3rem;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .theme-toggle {
+        margin-left: auto;
     }
 }
-.btn-como-llegar {
-    display: inline-flex;
-    align-items: center;
-    background-color: #4285F4;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-top: 15px;
-    font-weight: 500;
-    transition: background-color 0.3s;
+
+/* Mejoras adicionales para dispositivos muy pequeños */
+@media (max-width: 360px) {
+    header {
+        padding: 0.6rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .theme-toggle, .menu-toggle {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
 }
 
-.btn-como-llegar:hover {
-    background-color: #3367D6;
-}
-
-.btn-como-llegar svg {
-    margin-right: 8px;
-}

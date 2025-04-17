@@ -425,29 +425,142 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: row; /* horizontal */
+        justify-content: center;
+        margin-top: 0.5rem;
+        width: 100%;
+        position: static; /* Evitar que sea absolute */
+        max-height: none; /* Sin límite de altura */
+        overflow: visible; /* No ocultar overflow */
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    nav a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem; /* Texto más pequeño */
+    }
+    
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        position: sticky;
+        top: 0;
+        z-index: 100; 
     }
     
     .logo-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: 0.3rem;
     }
     
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .modal-content {
-        width: 90%;
-        margin: 20% auto;
-    }
-    
-    .theme-toggle {
-        margin-bottom: 1rem;
+    /* Ocultar el botón de hamburguesa */
+    .menu-toggle {
+        display: none;
     }
 }
+
+/* === GAMA BAJA: <= 360px === */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .card,
+    .featured-offer {
+        height: auto;
+        padding: 1rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row; /* Mantener horizontal incluso en pantallas pequeñas */
+        flex-wrap: wrap; /* Permitir que se envuelva si es necesario */
+        justify-content: center;
+    }
+    
+    nav a {
+        font-size: 0.8rem; /* Texto aún más pequeño */
+        padding: 0.4rem;
+        text-align: center;
+        width: auto; /* No ocupar todo el ancho */
+    }
+
+    .carousel-info h3 {
+        font-size: 1rem;
+    }
+
+    .carousel-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* === GAMA MEDIA: <= 480px === */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center; /* Centrar en lugar de flex-start */
+    }
+
+    nav {
+        flex-direction: row; /* Mantener horizontal */
+        flex-wrap: wrap; /* Permitir que se envuelva */
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav a {
+        width: auto; /* No ocupar todo el ancho */
+        text-align: center;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .featured-offer {
+        height: auto;
+    }
+
+    .carousel-container {
+        height: auto;
+    }
+
+    .carousel-image {
+        height: 180px;
+    }
+}
+
+/* === GAMA ALTA: <= 768px === */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .card,
+    .featured-offer {
+        min-height: 400px;
+    }
+
+    .carousel-image {
+        height: 250px;
+    }
+    
+    /* Asegurar que la navegación esté visible */
+    nav {
+        display: flex;
+        flex-direction: row;
+        max-height: none;
+        overflow: visible;
+    }
+}
+

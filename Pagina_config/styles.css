@@ -328,3 +328,170 @@ footer {
     from { opacity: 0.4; }
     to { opacity: 1; }
 }
+/* === GAMA BAJA: <= 360px === */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .card,
+    .featured-offer {
+        height: auto;
+        padding: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .carousel-info h3 {
+        font-size: 1rem;
+    }
+
+    .carousel-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* === GAMA MEDIA: <= 480px === */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: left;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .featured-offer {
+        height: auto;
+    }
+
+    .carousel-container {
+        height: auto;
+    }
+
+    .carousel-image {
+        height: 180px;
+    }
+}
+
+/* === GAMA ALTA: <= 768px === */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .card,
+    .featured-offer {
+        min-height: 400px;
+    }
+
+    .carousel-image {
+        height: 250px;
+    }
+}
+/* Mejoras para el header */
+header {
+    background-color: var(--header-bg);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: var(--transition);
+    position: sticky; /* Hace que el header se mantenga visible al hacer scroll */
+    top: 0;
+    z-index: 100;
+}
+
+/* Botón para el menú hamburguesa en móviles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Mejoras específicas para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: row; /* horizontal */
+        justify-content: center;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+    
+    nav.active {
+        max-height: 300px; /* Esto se activará con JavaScript */
+    }
+
+    
+    nav a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem; /* Texto más pequeño */
+    }
+    
+    .logo-container {
+        margin-bottom: 0.3rem;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 0.8rem 0.5rem;
+    }
+    
+    .theme-toggle {
+        margin-left: auto;
+    }
+}
+
+/* Mejoras adicionales para dispositivos muy pequeños */
+@media (max-width: 360px) {
+    header {
+        padding: 0.6rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .theme-toggle, .menu-toggle {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+    }
+}
+
