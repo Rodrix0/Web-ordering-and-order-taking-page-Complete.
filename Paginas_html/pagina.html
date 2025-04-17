@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="/Pagina_config/styles.css">
     <link rel="stylesheet" href="/Pagina_config/config.css">
     <link rel="shortcut icon" href="/Imagenes/Icon-pag.jpeg" type="">
-
-
-
 </head>
 <body>
     <header>
@@ -18,7 +15,7 @@
             <a href="/Paginas_html/pagina.html">Inicio</a>
             <a href="#">Acerca de</a>
             <a href="/Paginas_html/sucursales.html">Servicios</a>
-                        <a href="#">Contacto</a>
+            <a href="/Paginas_html/Contacto.html">Contacto</a>
         </nav>
         <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
     </header>
@@ -28,236 +25,50 @@
             <h1>Bienvenido a Comidas Rodrix</h1>
             <p>Explora nuestro delicioso menú de comidas</p>
         </section>
-        <!-- Insertar aquí el carrusel -->
+        
         <!-- Contenedor del carrusel -->
         <div class="carousel-container" id="localCarousel"></div>
 
-        <!-- Incluir el archivo compilado de JavaScript -->
-        <script src="/Configuraciones/carousel.js"></script>
-
-        <!-- Código para usar el carrusel -->
-        <script>
-        const misImagenes = [
-            {
-            image: "/Lugar/Local1.jpg",
-            title: "Nuestro local principal",
-            description: "Disfruta de un ambiente acogedor en nuestra sucursal principal"
-            },
-            {
-            image: "/Lugar/cocina1.jpg",
-            title: "Cocina profesional",
-            description: "Contamos con equipamiento de última generación para brindarte la mejor calidad"
-            },
-            {
-            image: "/Lugar/comedor1.jpg",
-            title: "Área de comedor",
-            description: "Espacio confortable para disfrutar tus comidas favoritas"
-            },
-            {
-            image: "/Lugar/bar1.jpg",
-            title: "Bar de bebidas",
-            description: "Gran variedad de bebidas para acompañar tus platillos"
-            }
-        ];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            createCarousel('localCarousel', misImagenes);
-        });
-        </script>
-
+        <!-- Contenedor de las tarjetas de menú -->
         <div id="menuCards" class="cards"></div>
-
-
     </main>
 
     <footer>
         <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Carrusel - Script no modular -->
+    <script src="/Configuraciones/carousel.js"></script>
     <script>
-        // El código de TypeScript compilado
+        const misImagenes = [
+            {
+                image: "/Lugar/Local1.jpg",
+                title: "Nuestro local principal",
+                description: "Disfruta de un ambiente acogedor en nuestra sucursal principal"
+            },
+            {
+                image: "/Lugar/cocina1.jpg",
+                title: "Cocina profesional",
+                description: "Contamos con equipamiento de última generación para brindarte la mejor calidad"
+            },
+            {
+                image: "/Lugar/comedor1.jpg",
+                title: "Área de comedor",
+                description: "Espacio confortable para disfrutar tus comidas favoritas"
+            },
+            {
+                image: "/Lugar/bar1.jpg",
+                title: "Bar de bebidas",
+                description: "Gran variedad de bebidas para acompañar tus platillos"
+            }
+        ];
+
         document.addEventListener('DOMContentLoaded', function () {
-            // Configuración del cambio de tema
-            const themeToggle = document.getElementById('themeToggle');
-            
-            // Comprueba si hay una preferencia guardada
-            const isDarkMode = localStorage.getItem('darkMode') === 'true';
-            
-            // Aplica el modo según la preferencia guardada
-            if (isDarkMode) {
-                document.body.classList.add('dark-mode');
-                themeToggle.textContent = '🌙';
-            }
-            
-            // Agrega el manejador de eventos al botón
-            themeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-                
-                // Actualiza el icono del botón
-                const isDark = document.body.classList.contains('dark-mode');
-                themeToggle.textContent = isDark ? '🌙' : '☀️';
-                
-                // Guarda la preferencia
-                localStorage.setItem('darkMode', isDark.toString());
-            });
-
-            // Datos del menú
-            const menuItems = [
-                {
-                    name: "Ofertas",
-                    image: "/Imagenes/Ofertas.jpg",
-                    shortDescription: "Descuentos especiales para nuestros clientes.",
-                    fullDescription: "Descuentos en hamburguesas <br> Descuentos en pizzas <br> Descuentos en empanadas <br>",
-                    pageUrl: "/MenuComidas/MenuOfertas.html"
-                },
-                {
-                    name: "Hamburguesas",
-                    image: "/Imagenes/Hamburguesa.jpg",
-                    shortDescription: "Deliciosas hamburguesas caseras.",
-                    fullDescription: "Hamburguesa Comun <br> Hamburguesa Doble <br> Hamburguesa triple <br> Hamburguesa con Queso <br> Hamburguesa con Bacon <br> Hamburguesa Con Tomate y Lechuga",
-                    pageUrl: "/MenuComidas/MenuHambur.html"
-                },
-                {
-                    name: "Pizzas",
-                    image: "/Imagenes/Pizzas.jpg",
-                    shortDescription: "Pizzas con masa artesanal.",
-                    fullDescription: "Pizza a la Cabresa <br> Pizza de Pepperoni <br> Pizza de Jamón y Queso <br>",
-                    pageUrl: "/MenuComidas/MenuPizzas.html"
-                },
-                {
-                    name: "Empanadas",
-                    image: "/Imagenes/Empanada.jpg",
-                    shortDescription: "Empanadas con diversos rellenos.",
-                    fullDescription: "Empanadas al Horno <br> Empanadas Fritas <br> Empanada de Carne <br>",
-                    pageUrl: "/MenuComidas/MenuEmpanadas.html"
-                },
-                {
-                    name: "Postres",
-                    image: "/Imagenes/Postre.jpg",
-                    shortDescription: "Deliciosos postres caseros.",
-                    fullDescription: "Tiramisu <br> Chocotortaa <br> Wafle <br>",
-                    pageUrl: "/MenuComidas/MenuPostres.html"
-                },
-                {
-                    name: "Ensaladas",
-                    image: "/Imagenes/Ensalada.jpg",
-                    shortDescription: "Ensaladas frescas y saludables.",
-                    fullDescription: "Ensalada Rusa <br> Ensalada Cesar <br> Ensalada Española <br>",
-                    pageUrl: "/MenuComidas/MenuEnsaladas.html"
-                },
-                {
-                    name: "Bebidas",
-                    image: "/Imagenes/Bebidas.jpg",
-                    shortDescription: "Refrescantes opciones de bebidas.",
-                    fullDescription: "Coca-Cola <br> Sprite <br> Fanta <br>",
-                    pageUrl: "/MenuComidas/MenuBebidas.html"
-                },
-                {
-                    name: "Tartas",
-                    image: "/Imagenes/Tarta.jpg",
-                    shortDescription: "Tartas saladas para todos los gustos.",
-                    fullDescription: "Tartas Jamon y Queso <br> Tartas de Acelga <br> Tartas de Choclo <br>",
-                    pageUrl: "/MenuComidas/MenuTartas.html"
-                },
-                {
-                    name: "Sándwiches",
-                    image: "/Imagenes/Sandwiches.jpg",
-                    shortDescription: "Sándwiches gourmet y tradicionales.",
-                    fullDescription: "Lomito de Pollo <br> Lomito de Carne <br> Sandwich de Milanesa <br>",
-                    pageUrl: "/MenuComidas/MenuSandwiches.html"
-                }
-            ];
-
-            // Función para crear las tarjetas del menú
-            function createMenuCards() {
-                console.log("Iniciando función createMenuCards");
-                
-                // Obtener el contenedor
-                const cardsContainer = document.getElementById('menuCards');
-                
-                // Verificar si el contenedor existe
-                if (!cardsContainer) {
-                    console.error("ERROR: No se encontró el elemento con ID 'menuCards'");
-                    return;
-                }
-                
-                console.log("Contenedor encontrado, generando tarjetas...");
-                
-                // Limpiar el contenedor antes de agregar nuevas tarjetas
-                cardsContainer.innerHTML = '';
-                
-                // Agregar la tarjeta de Ofertas primero (será la primera en el array reordenado)
-                const ofertaItem = menuItems[0];
-                
-                if (ofertaItem && ofertaItem.name === "Ofertas") {
-                    console.log("Creando tarjeta destacada para Ofertas");
-                    
-                    // Crear contenedor para la oferta destacada
-                    const featuredContainer = document.createElement('div');
-                    featuredContainer.className = 'featured-offer-container';
-                    
-                    // Crear la tarjeta de oferta
-                    const featuredCard = document.createElement('div');
-                    featuredCard.className = 'featured-offer';
-                    
-                    featuredCard.innerHTML = `
-                        <a href="${ofertaItem.pageUrl}">
-                            <img src="${ofertaItem.image}" alt="${ofertaItem.name}" class="card-image">
-                            <span class="featured-badge">¡Oferta Especial!</span>
-                        </a>
-                        <div class="card-content">
-                            <h3>${ofertaItem.name}</h3>
-                            <p>${ofertaItem.shortDescription}</p>
-                            <div class="card-description">
-                                <p>${ofertaItem.fullDescription}</p>
-                            </div>
-                        </div>
-                    `;
-                    
-                    // Añadir la tarjeta al contenedor y el contenedor al DOM
-                    featuredContainer.appendChild(featuredCard);
-                    cardsContainer.appendChild(featuredContainer);
-                }
-                
-                // Mostrar el resto de los ítems (empezando desde el índice 1)
-                for (let i = 1; i < menuItems.length; i++) {
-                    const item = menuItems[i];
-                    console.log(`Creando tarjeta para ${item.name}`);
-                    
-                    const card = document.createElement('div');
-                    card.className = 'card';
-                    
-                    card.innerHTML = `
-                        <a href="${item.pageUrl}">
-                            <img src="${item.image}" alt="${item.name}" class="card-image">
-                        </a>
-                        <div class="card-content">
-                            <h3>${item.name}</h3>
-                            <p>${item.shortDescription}</p>
-                            <div class="card-description">
-                                <p>${item.fullDescription}</p>
-                            </div>
-                        </div>
-                    `;
-                    
-                    cardsContainer.appendChild(card);
-                }
-                
-                console.log("Tarjetas generadas correctamente");
-            }
-
-            // Ejecutar cuando el DOM esté listo
-            document.addEventListener('DOMContentLoaded', function() {
-                console.log("DOM cargado, llamando a createMenuCards");
-                createMenuCards();
-            });
-
-            // También intentar ejecutar el código directamente (por si el evento DOMContentLoaded ya pasó)
-            if (document.readyState === 'complete' || document.readyState === 'interactive') {
-                console.log("Documento ya cargado, ejecutando createMenuCards directamente");
-                setTimeout(createMenuCards, 100); // Pequeño retraso para asegurar que todo está listo
-            }
+            createCarousel('localCarousel', misImagenes);
         });
     </script>
+
+    <!-- Scripts para el menú y tema - Usar solo main.js para enfoque modular -->
+    <script type="module" src="/Configuraciones/main.js"></script>
 </body>
 </html>
