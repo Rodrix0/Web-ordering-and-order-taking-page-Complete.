@@ -1,0 +1,434 @@
+/* styles-mobile.css */
+
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #f8f8f8;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Modo oscuro */
+.dark-theme {
+    --background-color: #222222;
+    --text-color: #f0f0f0;
+    --header-bg: #333333;
+    --card-bg: #2d2d2d;
+    --border-color: #444444;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+/* Header y navegación */
+header {
+    background-color: var(--header-bg);
+    padding: 0.8rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: var(--transition);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    transition: var(--transition);
+    margin-left: auto;
+}
+
+.theme-toggle:hover {
+    background-color: var(--border-color);
+}
+
+/* Botón para el menú hamburguesa */
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+nav.active {
+    max-height: 300px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    background-color: var(--border-color);
+}
+
+.logo-container {
+    margin-bottom: 0.3rem;
+}
+
+/* Contenido principal */
+main {
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 0 0.8rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.hero p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Tarjetas */
+.cards {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.featured-offer-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.featured-offer {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: var(--transition);
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 2px solid #ff6b6b;
+    padding: 1rem;
+}
+
+.featured-offer .card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.featured-offer .card-content {
+    padding: 1rem;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: var(--transition);
+    height: auto;
+    position: relative;
+    padding: 1rem;
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+/* Carrusel */
+.carousel-container {
+    max-width: 100%;
+    margin: 1.5rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    height: auto;
+    transition: var(--transition);
+    background-color: var(--card-bg);
+}
+
+.carousel-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.carousel-info {
+    padding: 1rem 1rem 2.5rem;
+}
+
+.carousel-info h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.carousel-info p {
+    margin: 0 0 1rem 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--header-bg);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+/* Buscador */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+#searchInput {
+    padding: 6px 10px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 13px;
+    width: 140px;
+    transition: width 0.3s;
+}
+
+#searchInput:focus {
+    width: 160px;
+    border-color: #ff6b6b;
+}
+
+#searchButton {
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+/* Resultados de búsqueda */
+#searchResults {
+    position: absolute;
+    top: 130px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 90%;
+    max-width: 320px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    padding: 5px 0;
+}
+
+.search-result-item {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background-color: #f8f8f8;
+}
+
+.search-result-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 12px;
+    border-radius: 4px;
+    border: 1px solid #eaeaea;
+}
+
+.search-result-info {
+    flex: 1;
+}
+
+.search-result-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+.search-result-info p {
+    margin: 0 0 3px 0;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.3;
+}
+
+.search-result-info .price {
+    font-weight: 600;
+    color: #ff6b6b;
+}
+
+.category-tag {
+    display: inline-block;
+    font-size: 10px;
+    color: #fff;
+    background-color: #5d87ff;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+/* Modo oscuro para resultados de búsqueda */
+.dark-theme #searchResults {
+    background-color: #333;
+    border: 1px solid #444;
+}
+
+.dark-theme .search-result-item {
+    border-bottom-color: #444;
+}
+
+.dark-theme .search-result-item:hover {
+    background-color: #3a3a3a;
+}
+
+.dark-theme .search-result-info h4 {
+    color: #eee;
+}
+
+.dark-theme .search-result-info p {
+    color: #ccc;
+}
+
+.dark-theme .search-result-info .price {
+    color: #ff8a8a;
+}
+
+.dark-theme .category-tag {
+    background-color: #4a6cb7;
+}
+
+/* Ajustes específicos para dispositivos muy pequeños */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .carousel-info h3 {
+        font-size: 1rem;
+    }
+
+    #searchResults {
+        top: 110px;
+        width: 95%;
+    }
+    
+    header {
+        padding: 0.6rem;
+    }
+}
