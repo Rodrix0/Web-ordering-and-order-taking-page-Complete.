@@ -533,7 +533,7 @@ header {
 #searchResults {
     position: absolute;
     top: 60px;
-    right: 100px;
+    right: 450px;
     width: 320px;
     max-height: 450px;
     overflow-y: auto;
@@ -543,6 +543,26 @@ header {
     z-index: 1000;
     display: none;
     padding: 5px 0;
+}
+/* Estilos para los resultados de búsqueda en celular */
+@media (max-width: 768px) {
+    #searchResults {
+        top: 130px; /* Ajusta según la posición de tu barra de búsqueda en móviles */
+        right: 50%;
+        transform: translateX(50%); /* Centra horizontalmente */
+        width: 90%; /* Usa un porcentaje del ancho de la pantalla */
+        max-width: 320px; /* Limita el ancho máximo */
+    }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 360px) {
+    #searchResults {
+        top: 110px; /* Puede necesitar ajuste según tu layout */
+        width: 95%;
+        right: 50%;
+        transform: translateX(50%);
+    }
 }
 
 .search-result-item {
