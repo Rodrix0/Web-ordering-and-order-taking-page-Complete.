@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Si no está disponible, hacemos una solicitud fetch para obtenerlo
-                const response = await fetch('/configuraciones/menuData.json');
+                const response = await fetch('/Pagina-Para-Compradores/configuraciones/menuData.json');
                 if (!response.ok) {
                     throw new Error('No se pudo cargar el menú');
                 }
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Construir el contenido HTML del resultado
                 let htmlContent = `
-                    <img src="${item.image}" alt="${item.name}" onerror="this.src='/Imagenes/default-food.jpg'">
+                    <img src="${item.image}" alt="${item.name}" onerror="this.src='/Pagina-Para-Compradores/Imagenes/default-food.jpg'">
                     <div class="search-result-info">
                         <h4>${item.name}</h4>
                 `;
