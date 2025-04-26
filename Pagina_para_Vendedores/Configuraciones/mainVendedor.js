@@ -1,5 +1,5 @@
 // main.js - Archivo principal que inicializa todas las funcionalidades
-import { initThemeToggler } from './themeTogglerVendedor.js';
+import { initThemeToggler } from './themeToggler.js';
 import { createMenuCards } from './menuCardsVendedor.js';
 
 // Función de inicialización principal
