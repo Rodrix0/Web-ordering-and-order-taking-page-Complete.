@@ -563,4 +563,86 @@ footer p {
         overflow: visible;
     }
 }
+/* Estilos para las opciones de checkout */
+.checkout-options {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.checkout-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-option:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos para los formularios */
+.checkout-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: var(--card-bg, #fff);
+    color: var(--text-color, #333);
+}
+
+/* Estilos para el resumen del pedido */
+.order-summary {
+    margin: 15px 0;
+    border-top: 1px solid var(--border-color, #ddd);
+    padding-top: 15px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 5px 0;
+    border-bottom: 1px dotted var(--border-color, #eee);
+}
+
+.order-total {
+    text-align: right;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .checkout-options {
+        flex-direction: column;
+    }
+    
+    .checkout-option {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
 
