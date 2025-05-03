@@ -748,7 +748,7 @@ function processDeliveryOrder() {
     const encodedMessage = encodeURIComponent(message);
     
     
-    const businessPhone = '123456789'; // Reemplazar con el número real
+    const businessPhone = '+123456789'; // Reemplazar con el número real
     
     // Creamos la URL de WhatsApp
     const whatsappUrl = `https://wa.me/${businessPhone}?text=${encodedMessage}`;
