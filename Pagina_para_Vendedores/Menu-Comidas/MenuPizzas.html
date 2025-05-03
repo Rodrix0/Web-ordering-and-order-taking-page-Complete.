@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Hamburguesas</title>
+    <link rel="stylesheet" href="/Pagina-Para-Compradores/Pagina_config/stylesMenuComida.css">
+    <link rel="stylesheet" href="/Pagina-Para-Compradores/Pagina_config/configMenuComida.css">
+    <link rel="shortcut icon" href="/Pagina-Para-Compradores/Icon/Icon-pizza.png" type="">
+
+</head>
+<body>
+    <header>
+        <div class="logo">Rodrix</div>
+        <nav>
+            <a href="/Pagina-Para-Compradores/Paginas_html/pagina.html">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="/Pagina-Para-Compradores/Paginas_html/sucursales.html">Servicios</a>
+                        <a href="#">Contacto</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+        <a href="#" id="cartButton" class="cart-button">
+            🛒 <span id="cartCount">0</span>
+        </a>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="cards">
+                <!-- Hamburguesa 1 -->
+                <div class="card">
+                    <img src="/Pagina-Para-Compradores/Menu-Comidas/Imagenes-de-Comidas/Imagenes de Pizzas/PizzaMoza.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Pizza mozzarella</h3>
+                        <p>$9000</p>
+                        <div class="card-description">
+                            Una deliciosa pizza con mozzarella,jamon y aceitunas.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Pizza mozzarella')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Pizza mozzarella')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina-Para-Compradores/Menu-Comidas/Imagenes-de-Comidas/Imagenes de Pizzas/PizzNapo.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Pizza napolitana</h3>
+                        <p>$7000</p>
+                        <div class="card-description">
+                            Una deliciosa pizza con mucha salsa y queso, con una aceituna.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Pizza napolitana')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Pizza napolitana')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina-Para-Compradores/Menu-Comidas/Imagenes-de-Comidas/Imagenes de Pizzas/PizzaCuatroQuesos.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Pizza cuatro quesos</h3>
+                        <p>$8000</p>
+                        <div class="card-description">
+                            Una deliciosa Pizza con Mozzarrella,Queso rallado,Queso cremoso, Queso parmesano.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Pizza cuatro quesos')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Pizza cuatro quesos')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina-Para-Compradores/Menu-Comidas/Imagenes-de-Comidas/Imagenes de Pizzas/PizzaPeppe.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Pizza pepperoni</h3>
+                        <p>$8000</p>
+                        <div class="card-description">
+                            Una deliciosa Pizza pepperoni con queso y aceitunas.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Pizza pepperoni')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Pizza pepperoni')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina-Para-Compradores/Menu-Comidas/Imagenes-de-Comidas/Imagenes de Pizzas/PizzaVege.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Pizza vegetariana</h3>
+                        <p>$7000</p>
+                        <div class="card-description">
+                            Pizza con rucula, queso ,morrones. Muy rica
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Pizza vegetariana')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Pizza vegetariana')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina-Para-Compradores/Menu-Comidas/Imagenes-de-Comidas/Imagenes de Pizzas/PizzaHawa.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Pizza hawaiana</h3>
+                        <p>$8000</p>
+                        <div class="card-description">
+                            Una deliciosa Pizza hawaiana con anana fresca.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Pizza hawaiana')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Pizza hawaiana')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.Magallanes Rodrigo</p>
+    </footer>
+    
+    <!-- Modal para agrandar -->
+    <div id="upgradeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('upgradeModal')">&times;</span>
+            <h2>Agrandar <span id="upgradeBurgerName"></span></h2>
+            <div class="option-list">
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Masa gruesa (+$2000)
+                    </label>
+                    <span>$2000</span>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Bordes rellenos de queso (+$3500)
+                    </label>
+                    <span>$3500</span>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Agregar pepperoni (+$3000)
+                    </label>
+                    <span>$3000</span>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Agregado de albahaca y aceite de oliva (+$2000)
+                    </label>
+                    <span>$2000</span>
+
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('upgradeModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="addToCart()">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para comprar -->
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('buyModal')">&times;</span>
+            <h2>Comprar <span id="buyBurgerName"></span></h2>
+            <p>¿Deseas agregar esta pizza al carrito?</p>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('buyModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="purchase()">Confirmar compra</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cartModal')">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Los items del carrito se insertarán aquí dinámicamente -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('cartModal')">Seguir comprando</button>
+                <button class="btn btn-primary" onclick="checkout()">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/Pagina-Para-Compradores/Configuraciones/carrito.js"></script>
+</body>
+</html>

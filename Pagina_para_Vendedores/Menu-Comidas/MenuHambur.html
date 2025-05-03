@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Hamburguesas</title>
+    <link rel="stylesheet" href="/Pagina-Para-Compradores/Pagina_config/stylesMenuComida.css">
+    <link rel="stylesheet" href="/Pagina-Para-Compradores/Pagina_config/configMenuComida.css">
+    <link rel="shortcut icon" href="/Pagina-Para-Compradores/Icon/Icon-hambur.png" type="">
+
+</head>
+<body>
+    <header>
+        <div class="logo">Rodrix</div>
+        <nav>
+            <a href="/Pagina-Para-Compradores/Paginas_html/pagina.html">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="/Pagina-Para-Compradores/Paginas_html/sucursales.html">Servicios</a>
+                        <a href="#">Contacto</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+        <a href="#" id="cartButton" class="cart-button">
+            🛒 <span id="cartCount">0</span>
+        </a>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="cards">
+                <!-- Hamburguesa 1 -->
+                <div class="card">
+                    <img src="/Pagina_para_Vendedores/Menu-Comidas/Imagenes-de-Comidas/Imagenes de Hambur/HamburComun.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Comun</h3>
+                        <p>$5000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con carne de res a la parrilla, queso cheddar, 
+                            lechuga fresca, tomate, cebolla roja y nuestra salsa especial, 
+                            servida en un pan artesanal tostado.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Comun')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Comun')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina_para_Vendedores/Imagenes-de-Comidas/Imagenes de Hambur/HamburDoble.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Doble</h3>
+                        <p>$7000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, 
+                            servida en un pan artesanal tostado.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Doble')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Doble')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina_para_Vendedores/Imagenes-de-Comidas/Imagenes de Hambur/HamburTriple.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Triple</h3>
+                        <p>$10000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con triple carne de res a la parrilla, queso cheddar, 
+                            servida en un pan artesanal tostado.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Triple')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Triple')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina_para_Vendedores/Imagenes-de-Comidas/Imagenes de Hambur/HamburConQueso.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Con queso</h3>
+                        <p>$8000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, 
+                            servida en un pan artesanal tostado.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Con queso')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Con queso')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina_para_Vendedores/Imagenes-de-Comidas/Imagenes de Hambur/HamburBacon.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Con bacon</h3>
+                        <p>$7000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con carne de res a la parrilla, queso cheddar, 
+                            bacon y nuestra salsa especial, 
+                            servida en un pan artesanal tostado.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Con bacon')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Con bacon')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="/Pagina_para_Vendedores/Imagenes-de-Comidas/Imagenes de Hambur/HamburConTomate.jpg" alt="Hamburguesa Clásica" class="card-image">
+                    <div class="card-content">
+                        <h3>Hamburguesa Con Tomate y Lechuga</h3>
+                        <p>$12000</p>
+                        <div class="card-description">
+                            Una deliciosa hamburguesa con doble carne de res a la parrilla, queso cheddar, 
+                            lechuga fresca, tomate, cebolla roja y nuestra salsa especial, 
+                            servida en un pan artesanal tostado.
+                        </div>
+                        <div class="actions">
+                            <button class="btn btn-secondary" onclick="showUpgradeModal('Hamburguesa Con Tomate y Lechuga')">Agrandar</button>
+                            <button class="btn btn-primary" onclick="showBuyModal('Hamburguesa Con Tomate y Lechuga')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.Magallanes Rodrigo</p>
+    </footer>
+    
+    <!-- Modal para agrandar -->
+    <div id="upgradeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('upgradeModal')">&times;</span>
+            <h2>Agrandar <span id="upgradeBurgerName"></span></h2>
+            <div class="option-list">
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Agrandar papas (+$3000)
+                    </label>
+                    <span>$3000</span>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Agregar carne (+$2500)
+                    </label>
+                    <span>$2500</span>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox"> Extra queso (+$2000)
+                    </label>
+                    <span>$2000</span>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('upgradeModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="addToCart()">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para comprar -->
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('buyModal')">&times;</span>
+            <h2>Comprar <span id="buyBurgerName"></span></h2>
+            <p>¿Deseas agregar esta hamburguesa al carrito?</p>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('buyModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="purchase()">Confirmar compra</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cartModal')">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Los items del carrito se insertarán aquí dinámicamente -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('cartModal')">Seguir comprando</button>
+                <button class="btn btn-primary" onclick="checkout()">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/Pagina-Para-Compradores/Configuraciones/carrito.js"></script>
+</body>
+</html>

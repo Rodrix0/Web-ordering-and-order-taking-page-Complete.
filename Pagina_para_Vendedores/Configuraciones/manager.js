@@ -97,7 +97,7 @@ function openCategoryModal(categoryName, categoryUrl) {
         const price = Math.floor(Math.random() * 1500) + 500;
         
         itemCard.innerHTML = `
-            <img src="/Pagina-Para-Compradores/Imagenes/${categoryName.toLowerCase()}.jpg" alt="${desc}">
+            <img src="/Pagina_para_Vendedores/Imagenes/${categoryName.toLowerCase()}.jpg" alt="${desc}">
             <div class="item-info">
                 <h4>${desc}</h4>
                 <p>Producto ${index + 1} de la categoría ${categoryName}</p>
