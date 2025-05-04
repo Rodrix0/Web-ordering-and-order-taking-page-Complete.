@@ -72,56 +72,41 @@ function openCategoryModal(categoryName, categoryUrl) {
     const modalItemList = document.getElementById('modalItemList');
 
     modalTitle.textContent = categoryName;
-    modalItemList.innerHTML = ''; // Limpiar lista anterior
+    modalItemList.innerHTML = '';
 
-    // Encontrar la categoría en menuItems
     const category = menuItems.find(item => item.pageUrl === categoryUrl);
-    
-    if (!category) {
-        console.error('Categoría no encontrada:', categoryUrl);
+    if (!category || !category.products) {
+        console.error('Categoría o productos no encontrados:', categoryUrl);
         return;
     }
 
-    // Para este ejemplo, vamos a crear productos ficticios basados en la descripción
-    const descriptions = category.fullDescription.split('<br>').filter(desc => desc.trim() !== '');
-    
-    descriptions.forEach((desc, index) => {
-        desc = desc.trim();
-        if (!desc) return;
-        
-        // Crear tarjeta de producto
+    category.products.forEach((product, index) => {
         const itemCard = document.createElement('div');
         itemCard.className = 'item-card';
-        
-        // Generar precio aleatorio entre 500 y 2000
-        const price = Math.floor(Math.random() * 1500) + 500;
-        
+
         itemCard.innerHTML = `
-            <img src="/Pagina_para_Vendedores/Imagenes/${categoryName.toLowerCase()}.jpg" alt="${desc}">
+            <img src="${product.image}" alt="${product.name}">
             <div class="item-info">
-                <h4>${desc}</h4>
-                <p>Producto ${index + 1} de la categoría ${categoryName}</p>
-                <p class="price">$${price.toFixed(2)}</p>
+                <h4>${product.name}</h4>
+                <p class="price">$${product.price.toFixed(2)}</p>
                 <div class="quantity-selector">
                     <button class="decrease-qty">-</button>
                     <span class="qty-value">1</span>
                     <button class="increase-qty">+</button>
                 </div>
-                <button class="add-to-cart" data-name="${desc}" data-price="${price.toFixed(2)}">
+                <button class="add-to-cart" data-name="${product.name}" data-price="${product.price}">
                     Agregar al Carrito
                 </button>
             </div>
         `;
-        
+
         modalItemList.appendChild(itemCard);
     });
 
-    // Configurar eventos para botones de cantidad y agregar al carrito
     setupProductEvents();
-
-    // Mostrar modal
     modal.style.display = 'block';
 }
+
 
 // Configurar eventos para productos en el modal
 function setupProductEvents() {
