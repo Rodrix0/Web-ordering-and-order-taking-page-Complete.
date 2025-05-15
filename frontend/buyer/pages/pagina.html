@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comidas Rodrix</title>
+    <link rel="stylesheet" href="/frontend/buyer/assets/styles/base/styles.css">
+    <link rel="stylesheet" href="/frontend/buyer/assets/styles/base/config.css">
+    <link rel="shortcut icon" href="frontend/buyer/assets/menu_images/icons/Icon-pag.jpeg" type="">
+</head>
+<body>
+    <header>
+        <div class="logo">Rodrix</div>
+        <nav>
+            <a href="/frontend/buyer/pages/pagina.html">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="/frontend/buyer/pages/sucursales.html">Servicios</a>
+            <a href="/frontend/buyer/pages/Contacto.html">Contacto</a>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar comida...">
+            <button id="searchButton" aria-label="Buscar">🔍</button>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+        <a href="#" id="cartButton" class="cart-button">
+            🛒 <span id="cartCount">0</span>
+        </a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Bienvenido a Comidas Rodrix</h1>
+            <p>Explora nuestro delicioso menú de comidas</p>
+        </section>
+        
+        <!-- Contenedor del carrusel -->
+        <div class="carousel-container" id="localCarousel"></div>
+
+        <!-- Contenedor de las tarjetas de menú -->
+        <div id="menuCards" class="cards"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados. MAgallanes Rodrigo</p>
+    </footer>
+
+    <!-- Carrusel - Script no modular -->
+    <script src="/frontend/buyer/scripts/components/carousel.js"></script>
+    <script>
+        const misImagenes = [
+            {
+                image: "/frontend/buyer/assets/menu_images/place/Local1.jpg",
+                title: "Nuestro local principal",
+                description: "Disfruta de un ambiente acogedor en nuestra sucursal principal"
+            },
+            {
+                image: "/frontend/buyer/assets/menu_images/place/cocina1.jpg",
+                title: "Cocina profesional",
+                description: "Contamos con equipamiento de última generación para brindarte la mejor calidad"
+            },
+            {
+                image: "/frontend/buyer/assets/menu_images/place/Comedor1.jpg",
+                title: "Área de comedor",
+                description: "Espacio confortable para disfrutar tus comidas favoritas"
+            },
+            {
+                image: "/frontend/buyer/assets/menu_images/place/bar1.jpg",
+                title: "Bar de bebidas",
+                description: "Gran variedad de bebidas para acompañar tus platillos"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            createCarousel('localCarousel', misImagenes);
+        });
+    </script>
+
+    <!-- Scripts para el menú y tema - Usar solo main.js para enfoque modular -->
+    <script type="module" src="/frontend/buyer/scripts/main.js"></script>
+    <script type="module" src="/frontend/buyer/scripts/busqueda.js"></script>
+    
+
+</body>
+</html>

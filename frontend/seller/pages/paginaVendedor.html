@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Pedidos</title>
+    <link rel="stylesheet" href="/frontend/seller/assets/styles/base/style.css">
+    <link rel="stylesheet" href= "/frontend/seller/assets/styles/base/config.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Mi Sistema de Pedidos</div>
+        <nav>
+            <a href="paginaVendedor.html">Inicio</a>
+            <a href="paginaVendedor.html">Productos</a>
+            <a href="verPedidos.html">Ver pedidos</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Gestión de Pedidos</h1>
+            <p>Administra tus pedidos de manera fácil y rápida</p>
+        </section>
+
+        <section class="action-buttons">
+            <div class="action-button" onclick="location.href='ver-pedidos.html'">
+                <div class="button-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Ver Pedidos</h3>
+                <p>Consulta y gestiona todos tus pedidos existentes</p>
+            </div>
+
+            <div class="action-button" onclick="location.href='/frontend/seller/pages/crearPedidos.html'">
+                <div class="button-icon">
+                    <i class="fas fa-file-pen"></i>
+                </div>
+                <h3>Crear Pedido</h3>
+                <p>Crea un nuevo pedido de forma rápida y sencilla</p>
+            </div>
+            <section id="menuCards" class="menu-cards"></section>
+
+            
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sistema de Pedidos</h3>
+                <p>Soluciones para tu negocio</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: contacto@ejemplo.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/frontend/seller/scripts/mainVendedor.js"></script>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sistema de Pedidos. Todos los derechos reservados Magallanes Rodrigo.</p>
+        </div>
+    </footer>
+</body>
+</html>

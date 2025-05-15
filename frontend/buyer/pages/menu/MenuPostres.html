@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Postres</title>
+    <link rel="stylesheet" href="/frontend/buyer/assets/styles/components/stylesMenuComida.css">
+    <link rel="stylesheet" href="/frontend/buyer/assets/styles/components/configMenuComida.css">
+    <link rel="shortcut icon" href="/frontend/buyer/assets/images/icons/postres.png" type="">
+</head>
+<body>
+    <header>
+        <div class="logo">Rodrix</div>
+        <nav>
+            <a href="/frontend/buyer/pages/pagina.html">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="/frontend/buyer/pages/sucursales.html">Servicios</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+        <a href="#" id="cartButton" class="cart-button">🛒 <span id="cartCount">0</span></a>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="cards">
+
+                <!-- Postre 1 -->
+                <div class="card">
+                    <img src="/frontend/buyer/assets/menu_images/images/Imagenes de Postres/Helado.jpg" alt="Helado" class="card-image">
+                    <div class="card-content">
+                        <h3>Helado</h3>
+                        <p>$3000</p>
+                        <div class="card-description">Helado artesanal de crema americana, chocolate o frutilla.</div>
+                        <div class="actions">
+                            <button class="btn btn-primary" onclick="showBuyModal('Helado')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postre 2 -->
+                <div class="card">
+                    <img src="/frontend/buyer/assets/menu_images/images/Imagenes de Postres/Flan.jpg" alt="Flan con dulce" class="card-image">
+                    <div class="card-content">
+                        <h3>Flan con dulce</h3>
+                        <p>$2500</p>
+                        <div class="card-description">Flan casero con dulce de leche o crema a elección.</div>
+                        <div class="actions">
+                            <button class="btn btn-primary" onclick="showBuyModal('Flan con dulce')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postre 3 -->
+                <div class="card">
+                    <img src="/frontend/buyer/assets/menu_images/images/Imagenes de Postres/Chees.jpg" alt="Cheesecake" class="card-image">
+                    <div class="card-content">
+                        <h3>Cheesecake</h3>
+                        <p>$3500</p>
+                        <div class="card-description">Porción de tarta de queso con mermelada de frutos rojos.</div>
+                        <div class="actions">
+                            <button class="btn btn-primary" onclick="showBuyModal('Cheesecake')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postre 4 -->
+                <div class="card">
+                    <img src="/frontend/buyer/assets/menu_images/images/Imagenes de Postres/Brownie.jpg" alt="Brownie" class="card-image">
+                    <div class="card-content">
+                        <h3>Brownie</h3>
+                        <p>$2800</p>
+                        <div class="card-description">Brownie de chocolate con nuez, acompañado de una bocha de helado.</div>
+                        <div class="actions">
+                            <button class="btn btn-primary" onclick="showBuyModal('Brownie')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postre 5 -->
+                <div class="card">
+                    <img src="/frontend/buyer/assets/menu_images/images/Imagenes de Postres/Mousse.jpg" alt="Mousse de chocolate" class="card-image">
+                    <div class="card-content">
+                        <h3>Mousse de chocolate</h3>
+                        <p>$2600</p>
+                        <div class="card-description">Mousse cremoso de chocolate con topping de crema batida.</div>
+                        <div class="actions">
+                            <button class="btn btn-primary" onclick="showBuyModal('Mousse de chocolate')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Postre 6 -->
+                <div class="card">
+                    <img src="/frontend/buyer/assets/menu_images/images/Imagenes de Postres/Tira.jpg" alt="Tiramisú" class="card-image">
+                    <div class="card-content">
+                        <h3>Tiramisú</h3>
+                        <p>$3200</p>
+                        <div class="card-description">Clásico postre italiano con capas de café, crema y cacao.</div>
+                        <div class="actions">
+                            <button class="btn btn-primary" onclick="showBuyModal('Tiramisú')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados. Magallanes Rodrigo</p>
+    </footer>
+    <!-- Modal para comprar -->
+    <div id="buyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('buyModal')">&times;</span>
+            <h2>Comprar <span id="buyBurgerName"></span></h2>
+            <p>¿Deseas agregar este postre al carrito?</p>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('buyModal')">Cancelar</button>
+                <button class="btn btn-primary" onclick="purchase()">Confirmar compra</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal del carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cartModal')">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Los items del carrito se insertarán aquí dinámicamente -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal('cartModal')">Seguir comprando</button>
+                <button class="btn btn-primary" onclick="checkout()">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/frontend/buyer/scripts/carrito.js"></script>
+</body>
+</html>

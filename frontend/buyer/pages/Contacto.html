@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/buyer/assets/styles/base/config.css">
+    <link rel="stylesheet" href="/frontend/buyer/assets/styles/components/stylesContact.css">
+
+    <title>Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">MiEmpresa</div>
+        </div>
+        <nav id="mainNav">
+            <a href="/frontend/buyer/pages/pagina.html">Inicio</a>
+            <a href="/frontend/buyer/pages/sucursales.html">Servicios</a>
+            <a href="#">Acerca de</a>
+            <a href="/frontend/buyer/pages/pagina.html">Productos</a>
+        </nav>
+        <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema">☀️</button>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h1>Contacta con Nosotros</h1>
+            <p>Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo a través de cualquiera de los siguientes medios o completa el formulario y te responderemos lo antes posible.</p>
+        </section>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Nuestra Ubicación</h3>
+                        <p>Calle Principal 123, Ciudad, CP </p>
+                        <p>provincia, pais</p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Teléfono</h3>
+                        <p>+.........</p>
+                        <p>Lun - Vie: 9:00 - 18:00</p>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <p>info@miempresa.com</p>
+                        <p>soporte@miempresa.com</p>
+                    </div>
+                </div>
+
+                <div class="office-hours">
+                    <h3>Horario de Atención</h3>
+                    <table class="hours-table">
+                        <tr>
+                            <td>Lunes - Viernes</td>
+                            <td>9:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Sábado</td>
+                            <td>10:00 - 14:00</td>
+                        </tr>
+                        <tr>
+                            <td>Domingo</td>
+                            <td>Cerrado</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="social-media">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Envíanos un Mensaje</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Asunto</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194347.3844865408!2d-3.8196216795508214!3d40.437868338398796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1618579654169!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="faq-section">
+                <h2 class="faq-title">Preguntas Frecuentes</h2>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuál es el tiempo de respuesta a mis consultas?</h3>
+                    <p class="faq-answer">Nos comprometemos a responder todas las consultas en un plazo máximo de 24 horas laborables. Para asuntos urgentes, le recomendamos contactarnos directamente por teléfono.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Ofrecen atención presencial?</h3>
+                    <p class="faq-answer">Sí, puede visitarnos en nuestra oficina durante el horario laboral. Recomendamos concertar una cita previa para garantizar que podamos atenderle adecuadamente.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cómo puedo solicitar un presupuesto?</h3>
+                    <p class="faq-answer">Puede solicitar un presupuesto a través del formulario de contacto, especificando los detalles de su proyecto. También puede llamarnos directamente o enviarnos un correo electrónico.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Trabajan fuera de ...?</h3>
+                    <p class="faq-answer">Sí, ofrecemos nuestros servicios en. Para proyectos internacionales, por favor contáctenos para discutir las opciones disponibles.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MiEmpresa - Todos los derechos reservados.Magallanes Rodrigo</p>
+        <p>
+            <a href="politica-privacidad.html">Política de Privacidad</a> |
+            <a href="terminos-condiciones.html">Términos y Condiciones</a> |
+            <a href="cookies.html">Política de Cookies</a>
+        </p>
+    </footer>
+
+    <script src="/frontend/buyer/scripts/scriptContacto.js"></script>
+</body>
+</html>
