@@ -7,6 +7,18 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
-  }
-} 
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rodrix0/Pagina_Completa_Pedidos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rodrix0/Pagina_Completa_Pedidos/issues"
+  },
+  "homepage": "https://github.com/Rodrix0/Pagina_Completa_Pedidos#readme"
+}
